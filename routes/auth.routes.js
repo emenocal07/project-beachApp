@@ -31,7 +31,7 @@ router.get('/iniciar-sesion', (req, res, next) => res.render('auth/login-form'))
 // Login form (handle)
 router.post('/iniciar-sesion', (req, res, next) => {
 
-    const { email, userPwd } = req.body
+    const { username, userPwd } = req.body
 
     if (email.length === 0 || userPwd.length === 0) {
         res.render('auth/login-form', { errorMessage: 'Por favor, rellena todos los campos' })
@@ -39,7 +39,7 @@ router.post('/iniciar-sesion', (req, res, next) => {
     }
 
     User
-        .findOne({ email })
+        .findOne({ email})
         .then(user => {
             if (!user) {
                 res.render('auth/login-form', { errorMessage: 'Email no registrado en la Base de Datos' })
@@ -58,7 +58,7 @@ router.post('/iniciar-sesion', (req, res, next) => {
 
 // Logout
 router.post('/cerrar-sesion', (req, res) => {
-    req.session.destroy(() => res.redirect('/inicio-sesion'))
+    req.session.destroy(() => res.redirect('/iniciar-sesion'))
 })
 
 module.exports = router

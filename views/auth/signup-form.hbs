@@ -8,6 +8,23 @@
             <hr>
 
             <form action="/registro" method="POST">
+
+                <div class="mb-3">
+                    <label for="nameInput" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nameInput" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="lastnameInput" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="lastnameInput" name="lastname">
+                </div>
+
+                <div class="mb-3">
+                    <label for="countryInput" class="form-label">País</label>
+                    <input type="text" class="form-control" id="countryInput" name="country">
+                </div>
+
+
                 <div class="mb-3">
                     <label for="emailInput" class="form-label">Dirección de email</label>
                     <input type="email" class="form-control" id="emailInput" name="email">
@@ -24,7 +41,7 @@
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-dark block">Completar registro</button>
+                    <button type="submit" class="btn btn-primary block">Completar registro</button>
                 </div>
 
             </form>

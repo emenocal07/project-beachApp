@@ -7,9 +7,9 @@
             <h1>Inicio de sesión</h1>
             <hr>
 
-            <form action="/inicio-sesion" method="POST">
+            <form action="/iniciar-sesion" method="POST">
                 <div class="mb-3">
-                    <label for="emailInput" class="form-label">Dirección de email</label>
+                    <label for="emailInput" class="form-label">Email</label>
                     <input type="email" class="form-control" id="emailInput" name="email">
                 </div>
 
@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-dark block">Acceder</button>
+                    <button type="submit" class="btn btn-primary block">Acceder</button>
                 </div>
 
                 {{#if errorMessage}}
