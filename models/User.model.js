@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-
 const userSchema = new Schema(
   {
     username: {
@@ -11,30 +10,35 @@ const userSchema = new Schema(
     },
     email: {
       type: String,
-      required: [true, "Indica el email"],
+      required: [true, "Indica el email."],
       unique: true,
       lowercase: true,
       trim: true,
     },
     password: {
       type: String,
-      required: [true, "Indica la contraseña"],
+      required: [true, "Indica la contraseña."],
     },
     role: {
       type: String,
-      enum: ["user", "admin"],
-      default: "user",
+      enum: ["USER", "ADMIN"],
+      default: "USER",
     },
-    profile: [ // HEMOS INTENTADO RELACIONARLA CON EL USER MODEL PERO NO FUNCIONA
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Profile",
+    profile: {
+      name: String,
+      lastName: String,
+      profileImg: {
+        type: String,
+        default: "https://i.stack.imgur.com/l60Hf.png",
       },
-    ],
+      favourites: {
+        type: Schema.Types.ObjectId,
+        ref: "Beach",
+      },
+    },
   },
   {
     timestamps: true,
   }
 );
-
 module.exports = model("User", userSchema);
