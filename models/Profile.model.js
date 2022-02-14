@@ -10,7 +10,7 @@ const profileSchema = new Schema(
             type: String,
             default: "https://i.stack.imgur.com/l60Hf.png",
         },
-        favourites: {         //NO SABEMOS BIEN COMO AGREGAR ESTO
+        favourites: {         
             type: [String],
         },
         country: String

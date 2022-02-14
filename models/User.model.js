@@ -16,7 +16,7 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true,
     },
-    passwordHash: {
+    password: {
       type: String,
       required: [true, "Indica la contraseña"],
     },
@@ -25,7 +25,7 @@ const userSchema = new Schema(
       enum: ["user", "admin"],
       default: "user",
     },
-    profile: [
+    profile: [ // HEMOS INTENTADO RELACIONARLA CON EL USER MODEL PERO NO FUNCIONA
       {
         type: Schema.Types.ObjectId,
         ref: "Profile",
