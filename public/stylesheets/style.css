@@ -1,6 +1,7 @@
 body {
  font-family: 'Work Sans', sans-serif;
- background-image: url("./images/gradient.jpg");
+ background-image: url("/images/gradient.jpg");
+ background-size: cover;
 }
 
 nav {
