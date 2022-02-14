@@ -17,23 +17,30 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: [true, "Indica la contraseña."],
     },
     role: {
       type: String,
       enum: ["USER", "ADMIN"],
       default: "USER",
     },
-    profile: {
-      name: String,
-      lastName: String,
-      profileImg: {
-        type: String,
-        default: "https://i.stack.imgur.com/l60Hf.png",
-      },
-      favourites: {
+    favBeaches: [
+      {
         type: Schema.Types.ObjectId,
         ref: "Beach",
+      },
+    ],
+    profile: {
+      name: {
+        type: String,
+        required: true,
+      },
+      lastName: {
+        type: String,
+        required: true,
+      },
+      image: {
+        type: String,
+        default: "https://i.stack.imgur.com/l60Hf.png",
       },
     },
   },
