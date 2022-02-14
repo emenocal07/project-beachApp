@@ -1,51 +1,92 @@
 <div class="container">
 
-    <div class="row justify-content-center">
+  <div class="row justify-content-center">
 
-        <div class="col-md-6">
+    <div class="col-md-6">
 
-            <h1>Registro</h1>
-            <hr>
+      <h1>Registro</h1>
+      <hr />
 
-            <form action="/registro" method="POST">
+      <form action="/registro" method="POST">
 
-                <div class="mb-3">
-                    <label for="nameInput" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nameInput" name="name">
-                </div>
-
-                <div class="mb-3">
-                    <label for="lastnameInput" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="lastnameInput" name="lastname">
-                </div>
-
-                <div class="mb-3">
-                    <label for="countryInput" class="form-label">País</label>
-                    <input type="text" class="form-control" id="countryInput" name="country">
-                </div>
-
-
-                <div class="mb-3">
-                    <label for="emailInput" class="form-label">Dirección de email</label>
-                    <input type="email" class="form-control" id="emailInput" name="email">
-                </div>
-
-                <div class="mb-3">
-                    <label for="usernameInput" class="form-label">Nombre de usuario</label>
-                    <input type="text" class="form-control" id="usernameInput" name="username">
-                </div>
-
-                <div class="mb-3">
-                    <label for="pwdInput" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="pwdInput" name="userPwd">
-                </div>
-
-                <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary block">Completar registro</button>
-                </div>
-
-            </form>
+        <div class="mb-3 row">
+          <div class="col">
+            <label for="nameInput" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nameInput"
+              name="profile.name"
+            />
+          </div>
+          <div class="col">
+            <label for="lastNameInput" class="form-label">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastNameInput"
+              name="profile.lastName"
+            />
+          </div>
         </div>
+        <div class="mb-3 row">
+          <div class="col">
+            <label for="emailInput" class="form-label">Dirección de email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailInput"
+              name="email"
+            />
+            <div class="form-text">Requerido.</div>
+          </div>
+          <div class="col">
+            <label for="pwdInput" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              id="pwdInput"
+              name="userPwd"
+            />
+            <div class="form-text">Requerido.</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="usernameInput" class="form-label">Nombre de usuario</label>
+          <input
+            type="text"
+            class="form-control"
+            id="usernameInput"
+            name="username"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="imageInput" class="form-label">Imagen</label>
+          <input
+            type="url"
+            class="form-control"
+            id="imageInput"
+            name="profile.image"
+          />
+          <div class="form-text">Introduce la URL a la imagen que desees de
+            perfil.</div>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-outline-secondary">Completar
+            registro</button>
+        </div>
+
+        {{#if errorMessage}}
+          <div id="errorMessage">
+            <p>{{errorMessage}}</p>
+          </div>
+        {{/if}}
+
+      </form>
     </div>
+  </div>
 
 </div>
