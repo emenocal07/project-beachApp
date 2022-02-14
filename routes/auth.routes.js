@@ -60,7 +60,7 @@ router.post("/iniciar-sesion", (req, res, next) => {
 // Logout
 router.get("/cerrar-sesion", (req, res, next) => {
   console.log("entrando");
-  req.session.destroy(() => res.redirect("/iniciar-sesion"));
+  req.session.destroy(() => res.render("session-closed"));
 });
 
 module.exports = router;

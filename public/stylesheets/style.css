@@ -7,3 +7,12 @@ body {
 nav {
   margin-bottom:  30px;
 }
+
+.byebye {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.search-form {
+  text-align: center;
+}
