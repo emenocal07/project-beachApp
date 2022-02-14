@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const bcryptjs = require("bcryptjs");
-
 const User = require("./../models/User.model");
 const saltRounds = 10;
 
@@ -43,21 +42,24 @@ router.post("/iniciar-sesion", (req, res, next) => {
         errorMessage: "Email no registrado en la Base de Datos",
       });
       return;
-    } else if (bcryptjs.compareSync(userPwd, user.password) === false) {
+    }
+
+    if (bcryptjs.compareSync(userPwd, user.password) === false) {
       res.render("auth/login-form", {
         errorMessage: "La contraseña es incorrecta",
       });
       return;
     } else {
       req.session.currentUser = user;
-      console.log("El objeto de EXPRESS-SESSION", req.session);
+      console.log("session", req.session, user);
       res.redirect("/");
     }
   });
 });
 
 // Logout
-router.post("/cerrar-sesion", (req, res) => {
+router.get("/cerrar-sesion", (req, res, next) => {
+  console.log("entrando");
   req.session.destroy(() => res.redirect("/iniciar-sesion"));
 });
 
