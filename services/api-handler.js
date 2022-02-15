@@ -1,4 +1,6 @@
-class APIHandler {
+const axios = require("axios")
+
+module.exports = class APIHandler {
   constructor() {
     this.axiosApp = axios.create({
       baseURL:
