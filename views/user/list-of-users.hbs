@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+
+    <h5>Listado de usuarios</h5>
+    <br />
+    <br />
+
+    {{#each users}}
+      <div class="card users-card" style="width: 18rem;">
+        <img src="{{profile.image}}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{username}}</h5>
+          <p class="card-text">{{email}}</p>
+
+          <a href="/perfil/{{id}}" class="btn btn-outline-secondary">Perfil</a>
+
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

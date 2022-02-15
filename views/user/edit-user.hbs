@@ -1,0 +1,25 @@
+<div class="container">
+<div class="row">
+
+<h2>Editar {{username}}</h2>
+<br>
+
+<form action="/perfil/editar/{{_id}}" method="post">
+  <label for="username">username</label>
+  <input id="username" type="text" name="username" value="{{username}}" /><br />
+
+  <label for="email">email</label>
+  <input id="email" type="text" name="email" value="{{email}}" /><br />
+
+  <label for="name">Nombre</label>
+  <input id="name" type="text" name="profile.name" value="{{profile.name}}" /><br />
+
+  <label for="lastName">Apellido</label>
+  <input id="lastName" type="text" name="profile.lastName" value="{{profile.lastName}}" /><br
+  />
+    <br>
+  <button type="submit" class="btn btn-outline-secondary">Completar</button>
+
+
+  </div>
+  </div>

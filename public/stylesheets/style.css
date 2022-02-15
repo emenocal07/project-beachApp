@@ -45,3 +45,10 @@ nav {
   background-color: red;
 }
 
+.users-card {
+  background-color: transparent;
+}
+
+.delete-button {
+  background-color: transparent;
+}

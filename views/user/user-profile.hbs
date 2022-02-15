@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+      <p><img src="{{user.profile.image}}" width="60%" /></p>
+      <h2>{{user.username}}</h2>
+      <div class="col-md-6">
+        <hr />
+        <p>{{user.profile.name}} {{user.profile.lastName}}</p>
+        <p>{{user.email}}</p>
+        <p>{{user.favBeaches}}</p>
+        <p>Miembro desde: {{user.createdAt}}</p>
+
+        {{#if isAdmin}}
+
+          <form action="/perfil/delete/{{user._id}}" method="POST">
+            <button class="btn btn-outline-danger">Eliminar perfil</button>
+          </form>
+
+          <form action="/perfil/editar/{{user._id}}" method="GET">
+    <button class="btn btn-outline-info">Editar</a>
+    </form>
+
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
