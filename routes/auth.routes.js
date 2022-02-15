@@ -8,8 +8,8 @@ router.get("/registro", (req, res, next) => res.render("auth/signup-form"));
 
 // Signup form (handle)
 router.post("/registro", (req, res, next) => {
-  const { username, email, userPwd } = req.body;
-
+  const { username, email, userPwd, image } = req.body;
+console.log(req.body)
   bcryptjs
     .genSalt(saltRounds)
     .then((salt) => bcryptjs.hash(userPwd, salt))

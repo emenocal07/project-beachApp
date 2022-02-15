@@ -7,4 +7,7 @@ module.exports = (app) => {
 
   const beachRouter = require("./beach.routes");
   app.use("/playa", beachRouter);
+
+  const userRouter = require("./user.routes");
+  app.use("/", userRouter);
 };
