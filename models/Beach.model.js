@@ -1,15 +1,5 @@
-<<<<<<< HEAD
+
 const { Schema, model } = require("mongoose");
-<<<<<<< HEAD
-const beachSchema = new Schema(
-    {
-        beachImg: {
-            type: String,
-            default: "https://i.pinimg.com/564x/db/ff/00/dbff0088ee5a4879cc3211e237b8f941.jpg",
-        },
-    },
-)
-=======
 const beachSchema = new Schema({
   beachImg: {
     type: String,
@@ -21,8 +11,7 @@ const beachSchema = new Schema({
     ref: "Review",
   },
 });
->>>>>>> 3bed6890b25e9417bcfe77f44669f419f48da2f4
-=======
+
 // const { Schema, model } = require("mongoose");
 // const beachSchema = new Schema({
 //   beachImg: {
@@ -36,7 +25,7 @@ const beachSchema = new Schema({
 //   },
 //   id: String
 // });
->>>>>>> d9ef1ea887a64af4b50d1e421e44bc267d474671
+
 
 // const Beach = mongoose.model("Beach", beachSchema);
 
