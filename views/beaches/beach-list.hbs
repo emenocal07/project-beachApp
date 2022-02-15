@@ -1,12 +1,13 @@
 <div class="container">
-  <h2>Listado de playas</h2>
+  <h2>Listado de playas {{beach.Nombre}}</h2>
+  <hr>
 
-  {{#each allbeaches}}
+  <ol>
+    {{#each beach}}
+    <li><a href="/playa/detalles/{{attributes.Identifica}}">{{attributes.Nombre}}</a></li>
+    {{/each}}
+  </ol>
 
-    <h2>{{Nombre}}</h2>
-    <br />
-    <p></p>
 
-  {{/each}}
 
 </div>

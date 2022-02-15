@@ -14,7 +14,4 @@ module.exports = class APIHandler {
     );
   }
 
-  getOneRegister(playa_id) {
-    return this.axiosApp.get(`/playa/${playa_id}`);
-  }
 };

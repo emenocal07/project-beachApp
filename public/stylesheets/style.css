@@ -39,3 +39,9 @@ nav {
   opacity: 50%;
 }
 
+#myMap {
+  height: 500px;
+  width: 800px;
+  background-color: red;
+}
+
