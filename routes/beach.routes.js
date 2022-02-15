@@ -4,11 +4,15 @@ const BeachAPI = new APIHandler();
 
 // Get full list
 router.get("/listado", (req, res, next) => {
+
+  let page = parseInt(req.query.pagina) || 0;
+
   BeachAPI
-    .getFullList()
+    //.getFullList()
+    .getPaged(page)
     .then((allbeaches) => {
       // console.log(allbeaches.data.features[600].attributes)
-      res.render("beaches/beach-list", { beach: allbeaches.data.features })
+      res.render("beaches/beach-list", { beach: allbeaches.data.features, nextPage: page+1 })
     })
     .catch((err) => console.log(err));
 });

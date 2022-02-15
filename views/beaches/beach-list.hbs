@@ -1,13 +1,15 @@
 <div class="container">
   <h2>Listado de playas {{beach.Nombre}}</h2>
-  <hr>
+  <hr />
 
-  <ol>
+  <ul class="beach-list">
     {{#each beach}}
-    <li><a href="/playa/detalles/{{attributes.Identifica}}">{{attributes.Nombre}}</a></li>
+      <li><a
+          href="/playa/detalles/{{attributes.Identifica}}"
+        >{{attributes.Nombre}}</a></li>
     {{/each}}
-  </ol>
+  </ul>
 
-
+  <a href="/playa/listado?pagina={{nextPage}}" class="next-button">Siguiente</a>
 
 </div>
