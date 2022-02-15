@@ -13,9 +13,13 @@
 
         {{#if isAdmin}}
 
-          <form action="/delete/usuario/{{id}}" method="POST">
-            <button class="btn btn-danger">Eliminar usuario</button>
+          <form action="/perfil/delete/{{user._id}}" method="POST">
+            <button class="btn btn-outline-danger">Eliminar perfil</button>
           </form>
+
+          <form action="/perfil/editar/{{user._id}}" method="GET">
+    <button class="btn btn-outline-info">Editar</a>
+    </form>
 
         {{/if}}
       </div>

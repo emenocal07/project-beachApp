@@ -4,7 +4,7 @@ const User = require("../models/User.model");
 const { isUser, isAdmin } = require("../utils/utils");
 
 // Get full users list
-router.get("/listadodeusuarios", (req, res, next) => {
+router.get("/usuarios/listado", (req, res, next) => {
   User.find()
     .then((users) => res.render("user/list-of-users", { users }))
     .catch((err) => console.log(err));
@@ -17,7 +17,7 @@ router.get("/perfil/:id", (req, res, next) => {
     .then((user) => {
       console.log(req.session.currentUser);
       res.render("user/user-profile", {
-        user: req.session.currentUser,
+        user,
         isAdmin: isAdmin(req.session.currentUser),
       });
     })
@@ -25,13 +25,31 @@ router.get("/perfil/:id", (req, res, next) => {
 });
 
 // Delete user if admin
-router.post("/delete/usuario/:id", isLoggedIn, (req, res, next) => {
+router.post("/perfil/delete/:id", isLoggedIn, (req, res, next) => {
   const { id } = req.params;
 
   User.findByIdAndDelete(id)
 
-    .then(() => res.redirect("/listadeusuarios"))
+    .then(() => res.redirect("/usuarios/listado"))
     .catch((err) => console.log(err));
 });
 
 module.exports = router;
+
+// Edit user
+
+router.get("/perfil/editar/:id", isLoggedIn, (req, res, next) => {
+  const { id } = req.params;
+  User.findById(id)
+    .then((user) => res.render("user/edit-user", user))
+    .catch((err) => console.log(err));
+});
+
+router.post("/perfil/editar/:id", isLoggedIn, (req, res, next) => {
+  const { id } = req.params;
+  const { username, email, name, lastName } = req.body;
+
+  User.findByIdAndUpdate(id, { username, email, name, lastName })
+    .then(() => res.redirect("/usuarios/listado"))
+    .catch((err) => console.log(err));
+});
