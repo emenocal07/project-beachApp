@@ -47,9 +47,9 @@ router.get("/perfil/editar/:id", isLoggedIn, (req, res, next) => {
 
 router.post("/perfil/editar/:id", isLoggedIn, (req, res, next) => {
   const { id } = req.params;
-  const { username, email, name, lastName } = req.body;
+  const { username, email, name, lastName } = req.body;  
 
-  User.findByIdAndUpdate(id, { username, email, name, lastName })
+  User.findByIdAndUpdate(id, { username, email, profile: { name, lastName } })
     .then(() => res.redirect("/usuarios/listado"))
     .catch((err) => console.log(err));
 });
