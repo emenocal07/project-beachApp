@@ -11,7 +11,7 @@ This project's aim is to provide a searcher of all beaches all over the Spanish 
 | POST         | /registro          | Handle register page   |    |
 | GET          | /login             | Login page                          |    |
 | POST         | /login             | Handle login   |    |
-| GET          | /buscar/resultados | Search results   |    |
+| GET          | /listado | Full beaches list   |    |
 | GET          | /playa/:playa_id   | Details of one result and map and reviews   |    |
 | POST         |/playa/:playa_id    | Comments for registered users only  |    |
 | GET          | /playa/:playa_id/comentar   | Render comments form for registered users only   |  Yes  |
