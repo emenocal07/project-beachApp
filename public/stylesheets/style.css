@@ -49,6 +49,18 @@ nav {
   background-color: transparent;
 }
 
-.delete-button {
-  background-color: transparent;
+.beach-list {
+  list-style: none;
+}
+
+.beach-list li a {
+  text-decoration: none;
+  color:black;
+}
+
+.next-button {
+  margin-left: 2%;
+  margin-top: 2%;
+  text-decoration: none;
+  color: black;
 }
