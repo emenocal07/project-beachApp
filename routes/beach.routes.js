@@ -4,9 +4,12 @@ const BeachAPI = new APIHandler();
 
 // Get full list
 
-router.get("/buscar/resultados", (req, res, next) => {
+router.get("/listado", (req, res, next) => {
   BeachAPI.getFullList()
-    .then((allbeaches) => res.render("beaches/beach-list", allbeaches))
+    .then(
+      (allbeaches) => res.render("beaches/beach-list", allbeaches.data.features)
+      // console.log(allbeaches.data.features.attributes.Nombre)
+    )
     .catch((err) => console.log(err));
 });
 
