@@ -1,25 +1,40 @@
 <div class="container">
   <div class="row">
 
-    <h2>Editar {{username}}</h2>
-    <br>
+    <h2>Editar {{user.username}}</h2>
+    <br />
 
-    <form action="/perfil/editar/{{_id}}" method="post">
+    <form action="/perfil/editar/{{user._id}}" method="POST">
       <label for="username">username</label>
-      <input id="username" type="text" name="username" value="{{username}}" /><br />
+      <input
+        id="username"
+        type="text"
+        name="username"
+        value="{{user.username}}"
+      /><br />
 
       <label for="email">email</label>
-      <input id="email" type="text" name="email" value="{{email}}" /><br />
+      <input id="email" type="text" name="email" value="{{user.email}}" /><br />
 
       <label for="name">Nombre</label>
-      <input id="name" type="text" name="name" value="{{profile.name}}" /><br />
+      <input
+        id="name"
+        type="text"
+        name="name"
+        value="{{user.profile.name}}"
+      /><br />
 
       <label for="lastName">Apellido</label>
-      <input id="lastName" type="text" name="lastName" value="{{profile.lastName}}" /><br/>
+      <input
+        id="lastName"
+        type="text"
+        name="lastName"
+        value="{{user.profile.lastName}}"
+      /><br />
 
-      <br>
+      <br />
       <button type="submit" class="btn btn-outline-secondary">Completar</button>
     </form>
-    
+
   </div>
 </div>

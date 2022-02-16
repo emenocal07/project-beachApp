@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Listado de playas {{beach.Nombre}}</h2>
+  <h3>Listado de playas {{beach.Nombre}}</h3>
   <hr />
 
   <ul class="beach-list">
@@ -10,6 +10,7 @@
     {{/each}}
   </ul>
 
+  <a href="/playa/listado?pagina={{previousPage}}" class="next-button">Atrás</a>
   <a href="/playa/listado?pagina={{nextPage}}" class="next-button">Siguiente</a>
 
 </div>
