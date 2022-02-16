@@ -1,10 +1,10 @@
 <div class="container">
-    <h2>Playa {{beach.attributes.Nombre}}</h2>
+    <h2 id="beachTitle">Playa {{beach.attributes.Nombre}}</h2>
     <hr>
 
     <ul>
         <li>
-            <p><strong>Comunidad Autónoma: </strong>{{beach.attributes.Comunidad_}} </p>
+            <p><strong>Comunidad Autónoma: </strong>{{beach.attributes.Comunidad_}}</p>
         </li>
         <li>
             <p><strong>Provincia: </strong>{{beach.attributes.Provincia}}</p>
@@ -51,6 +51,9 @@
         <li>
             <p><strong>Observaciones: </strong>{{beach.attributes.Observacio}}</p>
         </li>
+        <p id="geometry-y">{{beach.attributes.Coordena_4}}</p>
+        <p id="geometry-x">{{beach.attributes.Coordena_5}}</p>
+
 
     </ul>
 </div>
@@ -65,4 +68,5 @@
 
 
 <script src="/js/beaches-map.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj_-946uvsxzrNEtSY6_tMIFxMU1V1p0A&callback=initMap"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj_-946uvsxzrNEtSY6_tMIFxMU1V1p0A&callback=initMap"></script>

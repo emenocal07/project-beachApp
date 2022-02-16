@@ -52,3 +52,7 @@ nav {
 .delete-button {
   background-color: transparent;
 }
+
+#geometry-y, #geometry-x {
+  display: none;
+}

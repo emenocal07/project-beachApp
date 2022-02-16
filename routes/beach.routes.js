@@ -7,7 +7,6 @@ router.get("/listado", (req, res, next) => {
   BeachAPI
     .getFullList()
     .then((allbeaches) => {
-      // console.log(allbeaches.data.features[600].attributes)
       res.render("beaches/beach-list", { beach: allbeaches.data.features })
     })
     .catch((err) => console.log(err));
@@ -22,20 +21,13 @@ router.get("/detalles/:id", (req, res, next) => {
     .getFullList()
     .then((allbeaches) => {
       const oneBeach = allbeaches.data.features.filter(elm => elm.attributes.Identifica == id)
-      console.log(oneBeach[0].attributes.Nombre)
       res.render("beaches/beach-details", { beach: oneBeach[0] })
     })
     .catch((err) => console.log(err));
 });
 
-// Beach map
+// Beach map markers
 router.get("/detalles/:id", (req, res, next) => res.render('beaches/beach-details'))
-
-
-
-
-
-
 
 
 

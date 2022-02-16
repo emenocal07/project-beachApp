@@ -1,16 +1,11 @@
-// const APIHandler = require("../services/api-handler.js");
-// const BeachAPI = new APIHandler();
-
 let map
+const latitude = Number(document.getElementById('geometry-x').innerHTML)
+const longitude = Number(document.getElementById('geometry-y').innerHTML)
+const beachTitle = document.getElementById('beachTitle').innerHTML
 
 function initMap() {
     drawMap()
-    getFullList()
-
-    
-    
-    
-
+    printMarkers()
 }
 
 function drawMap() {
@@ -21,32 +16,22 @@ function drawMap() {
         document.getElementById('myMap'),
         {
             zoom: 10,
-            center: { lat: 40.392499, lng: -3.698214 },
-            
+            center: { lat: latitude, lng: longitude },
         }
     )
 }
 
-// function getRestaurants() {
-
-//     axios.get('/api/restaurants')
-//         .then(response => printRestaurantsMarkers(response.data))
-//         .catch(err => console.log(err))
-// }
-
-function printMarkers(restaurants) {
+function printMarkers() {
 
     const { Marker } = google.maps
 
-    restaurants.forEach(elm => {
-
-        new Marker({
-            map,
-            position: {
-                lat: elm.location.coordinates[0],
-                lng: elm.location.coordinates[1]
-            },
-            title: elm.name
-        })
+    new Marker({
+        map,
+        position: {
+            lat: latitude,
+            lng: longitude,
+        },
+        title: beachTitle
     })
+
 }
