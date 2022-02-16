@@ -8,6 +8,7 @@ nav {
   margin-bottom:  30px;
 }
 
+
 .byebye {
   font-weight: bold;
   font-size: 2em;
@@ -26,12 +27,7 @@ nav {
   margin-top: 10%;
 }
 
-.button-search {
-  background-color: transparent;
- margin-left: 1%;
- margin-right: 1%;
-  
-}
+
 
 .image-turtle {
   width: auto;
@@ -49,10 +45,42 @@ nav {
   background-color: transparent;
 }
 
-.delete-button {
-  background-color: transparent;
+.beach-list {
+  list-style: none;
 }
 
 #geometry-y, #geometry-x {
   display: none;
+}
+ 
+.beach-list li a {
+  text-decoration: none;
+  color:black;
+}
+
+
+/* 
+.searchbox {
+
+  margin-top: 20%;
+} */
+
+
+/*COMPONENTS*/
+
+.next-button {
+  margin-left: 2.5%;
+  margin-top: 2%;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.next-button:hover {
+  color: fuchsia;
+}
+
+.search-button {
+  background-color: transparent;
+  
 }

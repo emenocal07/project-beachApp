@@ -1,72 +1,48 @@
 <div class="container">
-    <h2 id="beachTitle">Playa {{beach.attributes.Nombre}}</h2>
-    <hr>
+    <h2>Playa {{beach.attributes.Nombre}}</h2>
+    <hr />
 
-    <ul>
-        <li>
-            <p><strong>Comunidad Autónoma: </strong>{{beach.attributes.Comunidad_}}</p>
-        </li>
-        <li>
-            <p><strong>Provincia: </strong>{{beach.attributes.Provincia}}</p>
-        </li>
-        <li>
-            <p><strong>Dirección: </strong>{{beach.attributes.Dirección}}</p>
-        </li>
-        <li>
-            <p><strong>Descripción: </strong>{{beach.attributes.Descripci}}</p>
-        </li>
-        <li>
-            <p><strong>Longitud / Anchura: </strong>{{beach.attributes.Longitud}} / {{beach.attributes.Anchura}}</p>
-        </li>
-        <li>
-            <p><strong>Grado de ocupación: </strong>{{beach.attributes.Grado_ocup}}</p>
-        </li>
-        <li>
-            <p><strong>Aparcamiento: </strong>{{beach.attributes.Aparcamien}}</p>
-        </li>
-        <li>
-            <p><strong>Aseos: </strong>{{beach.attributes.Aseos}}</p>
-        </li>
-        <li>
-            <p><strong>Duchas: </strong>{{beach.attributes.Duchas}}</p>
-        </li>
-        <li>
-            <p><strong>Zona infantil: </strong>{{beach.attributes.Zona_infan}}</p>
-        </li>
-        <li>
-            <p><strong>Zona deportiva: </strong>{{beach.attributes.Zona_depor}}</p>
-        </li>
-        <li>
-            <p><strong>Club Nautico: </strong>{{beach.attributes.Club_naút}}</p>
-        </li>
-        <li>
-            <p><strong>Submarinismo: </strong>{{beach.attributes.Submarinis}}</p>
-        </li>
-        <li>
-            <p><strong>Zona de surf: </strong>{{beach.attributes.Zona_Surf}}</p>
-        </li>
-        <li>
-            <p><strong>Nudismo: </strong>{{beach.attributes.Nudismo}}</p>
-        </li>
-        <li>
-            <p><strong>Observaciones: </strong>{{beach.attributes.Observacio}}</p>
-        </li>
-        <p id="geometry-y">{{beach.attributes.Coordena_4}}</p>
-        <p id="geometry-x">{{beach.attributes.Coordena_5}}</p>
+    <p><strong>Comunidad Autónoma: </strong>{{beach.attributes.Comunidad_}} </p>
 
+    <p><strong>Provincia: </strong>{{beach.attributes.Provincia}}</p>
 
-    </ul>
+    <p><strong>Dirección: </strong>{{beach.attributes.Dirección}}</p>
+
+    <p><strong>Descripción: </strong>{{beach.attributes.Descripci}}</p>
+
+    <p><strong>Longitud / Anchura: </strong>{{beach.attributes.Longitud}} / {{beach.attributes.Anchura}}</p>
+
+    <p><strong>Grado de ocupación: </strong>{{beach.attributes.Grado_ocup}}</p>
+
+    <p><strong>Aparcamiento: </strong>{{beach.attributes.Aparcamien}}</p>
+
+    <p><strong>Aseos: </strong>{{beach.attributes.Aseos}}</p>
+
+    <p><strong>Duchas: </strong>{{beach.attributes.Duchas}}</p>
+
+    <p><strong>Zona infantil: </strong>{{beach.attributes.Zona_infan}}</p>
+
+    <p><strong>Zona deportiva: </strong>{{beach.attributes.Zona_depor}}</p>
+
+    <p><strong>Club Nautico: </strong>{{beach.attributes.Club_naút}}</p>
+
+    <p><strong>Submarinismo: </strong>{{beach.attributes.Submarinis}}</p>
+
+    <p><strong>Zona de surf: </strong>{{beach.attributes.Zona_Surf}}</p>
+
+    <p><strong>Nudismo: </strong>{{beach.attributes.Nudismo}}</p>
+
+    <p><strong>Observaciones: </strong>{{beach.attributes.Observacio}}</p>
+
+    <p id="geometry-y">{{beach.attributes.Coordena_4}}</p>
+    <p id="geometry-x">{{beach.attributes.Coordena_5}}</p>
+
 </div>
-
 
 <div class="container">
     <h3>Ubicación</h3>
-    <hr>
+    <hr />
     <figure id="myMap"></figure>
 
-</div>
-
-
-<script src="/js/beaches-map.js"></script>
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj_-946uvsxzrNEtSY6_tMIFxMU1V1p0A&callback=initMap"></script>
+    <script src="/js/beaches-map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>

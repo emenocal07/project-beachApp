@@ -1,10 +1,48 @@
 <div class="container">
   <div class="row justify-content-center">
 
-    <form id="form" class="search-form">
-      <input type="search" id="query" name="q" placeholder="¿Qué playa?" />
-      <button class="button-search">Búsqueda</button>
-    </form>
-    <img src="./images/turtle.png" class="image-turtle" class="img-fluid" />
+    <center>
+      <form action="/search-form" method="GET">
+        <label for="name"></label>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          value=""
+          placeholder="Nombre"
+          size="31"
+          maxlength="255"
+        />
+
+        <label for="ciudad"></label>
+        <input
+          id="ciudad"
+          type="text"
+          name="ciudad"
+          value=""
+          placeholder="ciudad"
+          size="31"
+          maxlength="255"
+        />
+
+        <label for="surf"></label>
+        <select>
+          <option value="yes">Surf</option>
+          <option value="yes">Sí</option>
+          <option value="no">No</option>
+
+        </select>
+
+        <br />
+        <br />
+        <input type="submit" value="Búsqueda" />
+      </form>
+    </center>
+
+    <img
+      src="./images/turtle.png"
+      class="image-turtle"
+      class="img-fluid position-fixed"
+    />
   </div>
 </div>

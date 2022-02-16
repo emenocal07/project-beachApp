@@ -4,21 +4,26 @@ const BeachAPI = new APIHandler();
 
 // Get full list
 router.get("/listado", (req, res, next) => {
+  let page = parseInt(req.query.pagina) || 0;
+
   BeachAPI
-    .getFullList()
+    //.getFullList()
+    .getPaged(page)
     .then((allbeaches) => {
-      res.render("beaches/beach-list", { beach: allbeaches.data.features })
+      // console.log(allbeaches.data.features[600].attributes)
+      res.render("beaches/beach-list", {
+        beach: allbeaches.data.features,
+        nextPage: page + 1,
+        previousPage: page - 1,
+      });
     })
     .catch((err) => console.log(err));
 });
 
-
 //Get one beach details
 router.get("/detalles/:id", (req, res, next) => {
-
-  const { id } = req.params
-  BeachAPI
-    .getFullList()
+  const { id } = req.params;
+  BeachAPI.getFullList()
     .then((allbeaches) => {
       const oneBeach = allbeaches.data.features.filter(elm => elm.attributes.Identifica == id)
       res.render("beaches/beach-details", { beach: oneBeach[0] })
@@ -26,12 +31,13 @@ router.get("/detalles/:id", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-// Beach map markers
-router.get("/detalles/:id", (req, res, next) => res.render('beaches/beach-details'))
+// Beach map
+router.get("/detalles/:id", (req, res, next) =>
+  res.render("beaches/beach-details")
+);
 
+// Search-form
 
-
-
+// router.get("/search-form");
 
 module.exports = router;
-
