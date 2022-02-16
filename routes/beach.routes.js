@@ -25,8 +25,10 @@ router.get("/detalles/:id", (req, res, next) => {
   const { id } = req.params;
   BeachAPI.getFullList()
     .then((allbeaches) => {
-      const oneBeach = allbeaches.data.features.filter(elm => elm.attributes.Identifica == id)
-      res.render("beaches/beach-details", { beach: oneBeach[0] })
+      const oneBeach = allbeaches.data.features.filter(
+        (elm) => elm.attributes.Identifica == id
+      );
+      res.render("beaches/beach-details", { beach: oneBeach[0] });
     })
     .catch((err) => console.log(err));
 });
@@ -38,6 +40,31 @@ router.get("/detalles/:id", (req, res, next) =>
 
 // Search-form
 
-// router.get("/search-form");
+/*
+router.get("/buscar/resultados", (req, res, next) => {
+  const { Nombre, Provincia, Surf } = req.query;
+  console.log(req.query);
+  BeachAPI.getFullList().then((allbeaches) => {
+    const result = allbeaches.data.features.filter((elm) =>
+      elm.attributes.includes(req.query)
+    );
+    res.render("search/search-result", { beaches: result });
+  });
+});
+*/
+
+router.post("/buscar/resultados", (req, res, next) => {
+  const {name, provincia} = req.body;
+  //console.log(req.body);
+  BeachAPI
+  .getFullList()
+  console.log(name);
+  console.log(provincia);
+  res.status(201).json({
+    message: 'It works!'
+  });
+});
+
+
 
 module.exports = router;

@@ -10,4 +10,6 @@ module.exports = (app) => {
 
   const userRouter = require("./user.routes");
   app.use("/", userRouter);
+
+
 };

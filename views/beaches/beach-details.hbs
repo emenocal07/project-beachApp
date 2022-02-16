@@ -1,48 +1,64 @@
 <div class="container">
-    <h2>Playa {{beach.attributes.Nombre}}</h2>
+  <div class="row">
+    <h2 id="beachTitle">Playa {{beach.attributes.Nombre}}</h2>
     <hr />
+    <div class="col">
+      <p><strong>Comunidad Autónoma: </strong>{{beach.attributes.Comunidad_}}
+      </p>
 
-    <p><strong>Comunidad Autónoma: </strong>{{beach.attributes.Comunidad_}} </p>
+      <p><strong>Provincia: </strong>{{beach.attributes.Provincia}}</p>
 
-    <p><strong>Provincia: </strong>{{beach.attributes.Provincia}}</p>
+      <p><strong>Dirección: </strong>{{beach.attributes.Dirección}}</p>
 
-    <p><strong>Dirección: </strong>{{beach.attributes.Dirección}}</p>
+      <p><strong>Descripción: </strong>{{beach.attributes.Descripci}}</p>
 
-    <p><strong>Descripción: </strong>{{beach.attributes.Descripci}}</p>
+      <p><strong>Longitud / Anchura: </strong>{{beach.attributes.Longitud}}
+        /
+        {{beach.attributes.Anchura}}</p>
 
-    <p><strong>Longitud / Anchura: </strong>{{beach.attributes.Longitud}} / {{beach.attributes.Anchura}}</p>
+      <p><strong>Grado de ocupación:
+        </strong>{{beach.attributes.Grado_ocup}}</p>
 
-    <p><strong>Grado de ocupación: </strong>{{beach.attributes.Grado_ocup}}</p>
+      <p><strong>Aparcamiento: </strong>{{beach.attributes.Aparcamien}}</p>
 
-    <p><strong>Aparcamiento: </strong>{{beach.attributes.Aparcamien}}</p>
+      <p><strong>Aseos: </strong>{{beach.attributes.Aseos}}</p>
 
-    <p><strong>Aseos: </strong>{{beach.attributes.Aseos}}</p>
+        </div>
+    <div class="col">
+      <p><strong>Duchas: </strong>{{beach.attributes.Duchas}}</p>
+  
 
-    <p><strong>Duchas: </strong>{{beach.attributes.Duchas}}</p>
+      <p><strong>Zona infantil: </strong>{{beach.attributes.Zona_infan}}</p>
 
-    <p><strong>Zona infantil: </strong>{{beach.attributes.Zona_infan}}</p>
+      <p><strong>Zona deportiva: </strong>{{beach.attributes.Zona_depor}}</p>
 
-    <p><strong>Zona deportiva: </strong>{{beach.attributes.Zona_depor}}</p>
+      <p><strong>Club Nautico: </strong>{{beach.attributes.Club_naút}}</p>
 
-    <p><strong>Club Nautico: </strong>{{beach.attributes.Club_naút}}</p>
+      <p><strong>Submarinismo: </strong>{{beach.attributes.Submarinis}}</p>
 
-    <p><strong>Submarinismo: </strong>{{beach.attributes.Submarinis}}</p>
+      <p><strong>Zona de surf: </strong>{{beach.attributes.Zona_Surf}}</p>
 
-    <p><strong>Zona de surf: </strong>{{beach.attributes.Zona_Surf}}</p>
+      <p><strong>Nudismo: </strong>{{beach.attributes.Nudismo}}</p>
 
-    <p><strong>Nudismo: </strong>{{beach.attributes.Nudismo}}</p>
+      <p><strong>Observaciones: </strong>{{beach.attributes.Observacio}}</p>
 
-    <p><strong>Observaciones: </strong>{{beach.attributes.Observacio}}</p>
-
-    <p id="geometry-y">{{beach.attributes.Coordena_4}}</p>
-    <p id="geometry-x">{{beach.attributes.Coordena_5}}</p>
-
+      <p id="geometry-y">{{beach.attributes.Coordena_4}}</p>
+      <p id="geometry-x">{{beach.attributes.Coordena_5}}</p>
+    </div>
+  </div>
 </div>
+<br />
 
-<div class="container">
+  <div class="container">
     <h3>Ubicación</h3>
     <hr />
+    <center>
     <figure id="myMap"></figure>
 
     <script src="/js/beaches-map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
+    ></script>
+
+  </div>
+</center>
