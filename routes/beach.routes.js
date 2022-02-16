@@ -7,8 +7,7 @@ const BeachAPI = new APIHandler();
 router.get("/listado", (req, res, next) => {
   let page = parseInt(req.query.pagina) || 0;
 
-  BeachAPI
-    .getPaged(page)
+  BeachAPI.getPaged(page)
     .then((allbeaches) => {
       res.render("beaches/beach-list", {
         beach: allbeaches.data.features,
@@ -33,27 +32,20 @@ router.get("/detalles/:id", (req, res, next) => {
 });
 
 // Beach map
-router.get("/detalles/:id", (req, res, next) => res.render("beaches/beach-details"));
-
+router.get("/detalles/:id", (req, res, next) =>
+  res.render("beaches/beach-details")
+);
 
 //Add reviews
-router.get("/detalles/:id", (req, res, next) => res.render("/detalles/:id"))
+router.get("/detalles/:id", (req, res, next) => res.render("/detalles/:id"));
 
-router.post("/detalles/:id", (req, res, next) =>{
+router.post("/detalles/:id", (req, res, next) => {
+  const { author, beach, content, date, rating } = req.params;
 
-  const {author, beach, content, date, rating} = req.params
-
-  Review
-    .create({ author, beach, content, date, rating })
-    .then(() => res.redirect('/detalles/:id'))
-    .catch((err)=> console.log(err))
-})
-
-
-
-
-
-
+  Review.create({ author, beach, content, date, rating })
+    .then(() => res.redirect("/detalles/:id"))
+    .catch((err) => console.log(err));
+});
 
 // Search-form
 
@@ -71,17 +63,17 @@ router.get("/buscar/resultados", (req, res, next) => {
 */
 
 router.post("/buscar/resultados", (req, res, next) => {
-  const {name, provincia} = req.body;
-  //console.log(req.body);
-  BeachAPI
-  .getFullList()
-  console.log(name);
-  console.log(provincia);
-  res.status(201).json({
-    message: 'It works!'
+  const { name, provincia } = req.body;
+
+  BeachAPI.getFullList().then((allbeaches) => {
+    const result = allbeaches.data.features.filter(
+      (elm) => elm.attributes.Nombre
+    );
+    res.render("search/search-result", { result: name, provincia });
   });
 });
 
-
-
 module.exports = router;
+
+// res.status(201).json({
+//   message: 'It works!'

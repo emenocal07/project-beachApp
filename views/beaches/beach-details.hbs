@@ -1,50 +1,32 @@
 <div class="container">
-<<<<<<< HEAD
-    <h2 id="beachTitle">Playa {{beach.attributes.Nombre}}</h2>
-    <hr>
-=======
   <div class="row">
     <h2 id="beachTitle">Playa {{beach.attributes.Nombre}}</h2>
-    <hr />
-    <div class="col">
+    <br />
+    <div class="col beach-info">
+      <br />
       <p><strong>Comunidad Autónoma: </strong>{{beach.attributes.Comunidad_}}
       </p>
->>>>>>> c99ed9e2ea146ecb45578d1f91f35e1451c40c69
-
       <p><strong>Provincia: </strong>{{beach.attributes.Provincia}}</p>
-
       <p><strong>Dirección: </strong>{{beach.attributes.Dirección}}</p>
-
       <p><strong>Descripción: </strong>{{beach.attributes.Descripci}}</p>
-
       <p><strong>Longitud / Anchura: </strong>{{beach.attributes.Longitud}}
         /
         {{beach.attributes.Anchura}}</p>
-
       <p><strong>Grado de ocupación:
         </strong>{{beach.attributes.Grado_ocup}}</p>
-
       <p><strong>Aparcamiento: </strong>{{beach.attributes.Aparcamien}}</p>
-
       <p><strong>Aseos: </strong>{{beach.attributes.Aseos}}</p>
 
-        </div>
-    <div class="col">
+    </div>
+    <div class="col beach-info2">
+      <br />
       <p><strong>Duchas: </strong>{{beach.attributes.Duchas}}</p>
-  
-
       <p><strong>Zona infantil: </strong>{{beach.attributes.Zona_infan}}</p>
-
       <p><strong>Zona deportiva: </strong>{{beach.attributes.Zona_depor}}</p>
-
       <p><strong>Club Nautico: </strong>{{beach.attributes.Club_naút}}</p>
-
       <p><strong>Submarinismo: </strong>{{beach.attributes.Submarinis}}</p>
-
       <p><strong>Zona de surf: </strong>{{beach.attributes.Zona_Surf}}</p>
-
       <p><strong>Nudismo: </strong>{{beach.attributes.Nudismo}}</p>
-
       <p><strong>Observaciones: </strong>{{beach.attributes.Observacio}}</p>
 
       <p id="geometry-y">{{beach.attributes.Coordena_4}}</p>
@@ -54,28 +36,36 @@
 </div>
 <br />
 
-  <div class="container">
-    <h3>Ubicación</h3>
-    <hr>
-    <figure id="myMap"></figure>
+<div class="container">
+
+  <br />
+  <figure id="myMap"></figure>
 
 </div>
 
-
-<form action="" method="">
-
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Deja una reseña</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<div class="container">
+  <form action="" method="">
+    <div class="row">
+    <div class="col">
+      <label for="exampleFormControlTextarea1" class="form-label">Deja una
+        reseña</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
     </div>
 
     <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-outline-secondary block">Enviar</button>
+      <button
+        type="submit"
+        class="btn btn-outline-secondary block"
+      >Enviar</button>
     </div>
 
-</form>
-
-
+  </form>
+</div>
+</div>
 <script src="/js/beaches-map.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
 </script>

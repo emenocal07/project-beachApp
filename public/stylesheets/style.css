@@ -30,7 +30,7 @@ nav {
 
 #myMap {
   height: 500px;
-  width: 800px;
+  width: 1300px;
   background-color: red;
 }
 
@@ -69,5 +69,17 @@ nav {
 
 .search-button {
   background-color: transparent;
-  
+}
+
+
+footer {
+  padding-top: 2%;
+  background-color: rgba(255, 255, 255, 0.767);
+}
+
+.beach-info {
+  background-color: rgba(255, 255, 255, 0.418);
+}
+.beach-info2 {
+  background-color: rgba(255, 255, 255, 0.418);
 }
