@@ -1,4 +1,5 @@
 const router = require("express").Router();
+//const Review = require('../models/Review.model')
 const APIHandler = require("../services/api-handler.js");
 const BeachAPI = new APIHandler();
 
@@ -7,10 +8,8 @@ router.get("/listado", (req, res, next) => {
   let page = parseInt(req.query.pagina) || 0;
 
   BeachAPI
-    //.getFullList()
     .getPaged(page)
     .then((allbeaches) => {
-      // console.log(allbeaches.data.features[600].attributes)
       res.render("beaches/beach-list", {
         beach: allbeaches.data.features,
         nextPage: page + 1,
@@ -20,7 +19,7 @@ router.get("/listado", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-//Get one beach details
+//Get beach details
 router.get("/detalles/:id", (req, res, next) => {
   const { id } = req.params;
   BeachAPI.getFullList()
@@ -32,9 +31,27 @@ router.get("/detalles/:id", (req, res, next) => {
 });
 
 // Beach map
-router.get("/detalles/:id", (req, res, next) =>
-  res.render("beaches/beach-details")
-);
+router.get("/detalles/:id", (req, res, next) => res.render("beaches/beach-details"));
+
+
+//Add reviews
+router.get("/detalles/:id", (req, res, next) => res.render("/detalles/:id"))
+
+router.post("/detalles/:id", (req, res, next) =>{
+
+  const {author, beach, content, date, rating} = req.params
+
+  Review
+    .create({ author, beach, content, date, rating })
+    .then(() => res.redirect('/detalles/:id'))
+    .catch((err)=> console.log(err))
+})
+
+
+
+
+
+
 
 // Search-form
 

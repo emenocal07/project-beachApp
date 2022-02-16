@@ -1,6 +1,6 @@
 <div class="container">
-    <h2>Playa {{beach.attributes.Nombre}}</h2>
-    <hr />
+    <h2 id="beachTitle">Playa {{beach.attributes.Nombre}}</h2>
+    <hr>
 
     <p><strong>Comunidad Autónoma: </strong>{{beach.attributes.Comunidad_}} </p>
 
@@ -41,8 +41,26 @@
 
 <div class="container">
     <h3>Ubicación</h3>
-    <hr />
+    <hr>
     <figure id="myMap"></figure>
 
-    <script src="/js/beaches-map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
+</div>
+
+
+<form action="" method="">
+
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Deja una reseña</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-outline-secondary block">Enviar</button>
+    </div>
+
+</form>
+
+
+<script src="/js/beaches-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+</script>
