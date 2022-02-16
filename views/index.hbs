@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container search-container">
   <div class="row justify-content-center">
 
     <center>
-      <form action="/search-form" method="GET">
+      <form action="/playa/buscar/resultados" method="POST">
         <label for="name"></label>
         <input
           id="name"
@@ -14,17 +14,18 @@
           maxlength="255"
         />
 
-        <label for="ciudad"></label>
+        <label for="provincia"></label>
         <input
-          id="ciudad"
+          id="provincia"
           type="text"
-          name="ciudad"
+          name="provincia"
           value=""
-          placeholder="ciudad"
+          placeholder="provincia"
           size="31"
           maxlength="255"
         />
 
+        <!--
         <label for="surf"></label>
         <select>
           <option value="yes">Surf</option>
@@ -32,6 +33,7 @@
           <option value="no">No</option>
 
         </select>
+        -->
 
         <br />
         <br />
@@ -39,10 +41,6 @@
       </form>
     </center>
 
-    <img
-      src="./images/turtle.png"
-      class="image-turtle"
-      class="img-fluid position-fixed"
-    />
+    <img src="./images/turtle.png" class="image-turtle" />
   </div>
 </div>
