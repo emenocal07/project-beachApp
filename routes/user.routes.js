@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { isLoggedIn, checkRole } = require("../middleware/routeguard");
 const User = require("../models/User.model");
-const { isUser, isAdmin } = require("../utils/utils");
+const { isUser, isAdmin, isLogged } = require("../utils/utils");
 
 // Get full users list
 router.get("/usuarios/listado", isLoggedIn, checkRole('ADMIN'), (req, res, next) => {
@@ -24,6 +24,7 @@ router.get("/perfil/:id", (req, res, next) => {
       console.log('HOLAAAA', req.session.currentUser);
       res.render("user/user-profile", {
         user,
+        isLogged: isLogged(req.session.currentUser),
         isAdmin: isAdmin(req.session.currentUser),
         isUser: isUser(req.session.currentUser._id, id),
       });

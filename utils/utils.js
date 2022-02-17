@@ -7,6 +7,8 @@ const isAdmin = (user) => user.role === "ADMIN";
 
 const isUser = (id, userid) => id === userid;
 
+const isLogged = (user) => user
+
 const filterAttr = (attr, search) => {
   if (
     attr.attributes.Nombre.toLocaleLowerCase() ===
@@ -31,4 +33,4 @@ const filterAttr = (attr, search) => {
 
 // En la ruta hay q llamar a esta función, y serán los valores id y req.session.currentUser._id para luego comparar en la ruta
 
-module.exports = { isUser, isAdmin, capitalized, filterAttr };
+module.exports = { isUser, isLogged, isAdmin, capitalized, filterAttr };

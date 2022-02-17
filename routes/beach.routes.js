@@ -51,9 +51,9 @@ router.get("/detalles/:id", (req, res, next) => res.render("/detalles/:id"));
 
 router.post("/detalles/:id", (req, res, next) => {
   const { id } = req.params
-  const { content } = req.body;
+  const { content, date } = req.body;
 
-  Review.create({ author: req.session.currentUser._id, beach: id, content, rating: 5 }, { new: true })
+  Review.create({ author: req.session.currentUser._id, beach: id, content, date }, { new: true })
     .then(() => res.redirect(`/playa/detalles/${id}`))
     .catch((err) => console.log(err));
 });

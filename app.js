@@ -21,6 +21,8 @@ require("./config/session.config")(app);
 
 // default value for title local
 app.locals.appTitle = "project-BeachApp";
+app.locals.currentLoggedUser
+app.locals.isLoggedIn = false
 
 // 👇 Start handling routes here
 require("./routes")(app);

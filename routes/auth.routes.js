@@ -51,6 +51,8 @@ router.post("/iniciar-sesion", (req, res, next) => {
       return;
     } else {
       req.session.currentUser = user;
+      req.app.locals.currentLoggedUser = req.session.currentUser
+      req.app.locals.isLoggedIn = true
       console.log("session", req.session, user);
       res.redirect(`/perfil/${(req.session, user.id)}`);
     }
@@ -59,6 +61,8 @@ router.post("/iniciar-sesion", (req, res, next) => {
 
 // Logout
 router.get("/cerrar-sesion", (req, res, next) => {
+  req.app.locals.currentLoggedUser = undefined
+  req.app.locals.isLoggedIn = false
   req.session.destroy(() => res.render("session-closed"));
 });
 

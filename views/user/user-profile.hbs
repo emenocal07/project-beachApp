@@ -29,24 +29,24 @@
         </div>
         {{/if}}
 
-                {{#if isAdmin}}
-                
-                <div class="row">
-                  <div class="col-md-6">
-                
-                    <form action="/perfil/delete/{{user._id}}" method="POST">
-                      <button class="btn btn-outline-danger">Eliminar perfil</button>
-                    </form>
-                
-                  </div>
-                  <div class="col-md-6">
-                    <form action="/perfil/editar/{{user._id}}" method="GET">
-                      <button class="btn btn-outline-info">Editar perfil</a>
-                    </form>
-                  </div>
-                </div>
-                <a class="btn" href="/usuarios/listado">Ir listado de usuarios</a>
-                {{/if}}
+        {{#if isAdmin}}
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <form action="/perfil/delete/{{user._id}}" method="POST">
+              <button class="btn btn-outline-danger">Eliminar perfil</button>
+            </form>
+
+          </div>
+          <div class="col-md-6">
+            <form action="/perfil/editar/{{user._id}}" method="GET">
+              <button class="btn btn-outline-info">Editar perfil</a>
+            </form>
+          </div>
+        </div>
+        <a class="btn" href="/usuarios/listado">Ir listado de usuarios</a>
+        {{/if}}
 
 
         <a class="btn" href="/">Ir atras</a>
