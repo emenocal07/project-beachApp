@@ -66,28 +66,16 @@
 
   <h5>Opiniones</h5>
   {{#each foundReviews}}
-<<<<<<< HEAD
-  <ul>
-
-    <li>
-      <p>{{this.content}}</p>
-      <p>Por: {{this.author}}</p>
-      <p>Fecha: {{this.date}}</p>
-    </li>
-
-  </ul>
-
-
-=======
   
   <div class="card card-review" style="width: 41rem;">
   <div class="card-body">
     <h5 class="card-title">{{this.author.profile.name}}</h5>
+    
     <p> </p>
     <p class="card-text">{{this.content}}</p>
+
   </div>
   </div>  
->>>>>>> 0e64b5ce75506b3d92adfee6b06c6292af090695
   {{/each}}
 
 
@@ -98,7 +86,7 @@
 </div>
 <script src="/js/beaches-map.js"></script>
 <script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANMCO4Ono02wonilsk44cCOdGTmb7LwRw&callback=initMap"></script>
+  src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>
 
   <footer>
   <div class="container">
