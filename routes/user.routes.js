@@ -4,20 +4,24 @@ const User = require("../models/User.model");
 const { isUser, isAdmin } = require("../utils/utils");
 
 // Get full users list
-router.get("/usuarios/listado", isLoggedIn, (req, res, next) => {
+router.get("/usuarios/listado", isLoggedIn, checkRole('ADMIN'), (req, res, next) => {
   User.find()
-    .then((users) => res.render("user/list-of-users", { users }))
+    .then((users) => res.render("user/list-of-users", { 
+      users,
+      isAdmin: isAdmin(req.session.currentUser)
+    }))
     .catch((err) => console.log(err))
+    
 });
 
 // Get user's profile
 router.get("/perfil/:id", (req, res, next) => {
   const { id } = req.params;
-
-  console.log(id, req.session.currentUser);
+  console.log(id);
   User.findById(id)
     .then((user) => {
-      console.log(req.session.currentUser);
+      console.log('USERRRRRRR', user)
+      console.log('HOLAAAA', req.session.currentUser);
       res.render("user/user-profile", {
         user,
         isAdmin: isAdmin(req.session.currentUser),
@@ -27,8 +31,8 @@ router.get("/perfil/:id", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-// Edit user
 
+// Edit user
 router.get("/perfil/editar/:id", isLoggedIn, (req, res, next) => {
   const { id } = req.params;
   if (

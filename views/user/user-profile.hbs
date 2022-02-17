@@ -11,47 +11,45 @@
         <p>{{user.favBeaches}}</p>
         <p>Miembro desde: {{user.createdAt}}</p>
 
-        {{#if isAdmin}}
-
-         <div class="row">
-           <div class="col-md-6">
-
-            <form action="/perfil/delete/{{user._id}}" method="POST">
-            <button class="btn btn-outline-danger">Eliminar perfil</button>
-          </form>
-
-        </div>
-        <div class="col-md-6">
-          <form action="/perfil/editar/{{user._id}}" method="GET">
-        <button class="btn btn-outline-info">Editar perfil</a>
-         </form>
-         </div>
-          </div>
-
-          {{/if}}
-
-
         {{#if isUser}}
 
-          <div class="row">
-           <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6">
 
             <form action="/perfil/delete/{{user._id}}" method="POST">
-            <button class="btn btn-outline-danger">Eliminar perfil</button>
-          </form>
+              <button class="btn btn-outline-danger">Eliminar perfil</button>
+            </form>
 
-        </div>
-        <div class="col-md-6">
-          <form action="/perfil/editar/{{user._id}}" method="GET">
-        <button class="btn btn-outline-info">Editar perfil</a>
-         </form>
-         </div>
           </div>
-
-
+          <div class="col-md-6">
+            <form action="/perfil/editar/{{user._id}}" method="GET">
+              <button class="btn btn-outline-info">Editar perfil</a>
+            </form>
+          </div>
+        </div>
         {{/if}}
 
-      <a class="btn btn-outline-info" href="/usuarios/listado">Ir atras</a>
+                {{#if isAdmin}}
+                
+                <div class="row">
+                  <div class="col-md-6">
+                
+                    <form action="/perfil/delete/{{user._id}}" method="POST">
+                      <button class="btn btn-outline-danger">Eliminar perfil</button>
+                    </form>
+                
+                  </div>
+                  <div class="col-md-6">
+                    <form action="/perfil/editar/{{user._id}}" method="GET">
+                      <button class="btn btn-outline-info">Editar perfil</a>
+                    </form>
+                  </div>
+                </div>
+                <a class="btn" href="/usuarios/listado">Ir listado de usuarios</a>
+                {{/if}}
+
+
+        <a class="btn" href="/">Ir atras</a>
 
       </div>
     </div>

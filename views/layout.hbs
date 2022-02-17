@@ -28,11 +28,13 @@
           <li class="nav-item">
             <a class="nav-link" href="/registro">Registro</a>
           </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="/iniciar-sesion">Iniciar sesión</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="/usuarios/listado">Perfiles</a>
+            <a class="nav-link" href="/perfil/{{req.session.currentUser.user._id}}">Mi perfil</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/playa/listado">Listado de playas</a>
@@ -40,7 +42,6 @@
           <li class="nav-item">
             <a class="nav-link" href="/cerrar-sesion">Cerrar sesión</a>
           </li>
-
         </ul>
       </div>
     </div>
@@ -48,14 +49,12 @@
 
   {{{body}}}
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/script.js"></script>
 
 </body>
 
- 
+
 
 </html>

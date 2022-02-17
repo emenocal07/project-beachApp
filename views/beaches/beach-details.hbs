@@ -44,28 +44,39 @@
 </div>
 
 <div class="container">
-  <form action="" method="">
+  <form action="/playa/detalles/{{beach.attributes.Identifica}}" method="POST">
     <div class="row">
-    <div class="col">
-      <label for="exampleFormControlTextarea1" class="form-label">Deja una
-        reseña</label>
-      <textarea
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        rows="3"
-      ></textarea>
-    </div>
+      <div class="col">
+        <label for="exampleFormControlTextarea1" class="form-label">Deja una
+          reseña</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" type="text"></textarea>
+      </div>
 
-    <div class="d-grid gap-2">
-      <button
-        type="submit"
-        class="btn btn-outline-secondary block"
-      >Enviar</button>
-    </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-outline-secondary block">Enviar</button>
+      </div>
 
   </form>
 </div>
+
+<hr>
+
+<div>
+
+  <h3>Reseñas</h3>
+  {{#each foundReviews}}
+  <ul>
+
+    <li>
+      <p>{{this.content}}</p>
+      <p>Por: {{this.author}}</p>
+    </li>
+
+  </ul>
+
+
+  {{/each}}
 </div>
 <script src="/js/beaches-map.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key&callback=initMap">
-</script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=---------&callback=initMap"></script>

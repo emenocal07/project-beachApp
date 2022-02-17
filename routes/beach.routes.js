@@ -1,5 +1,5 @@
 const router = require("express").Router();
-//const Review = require('../models/Review.model')
+const Review = require('../models/Review.model')
 const APIHandler = require("../services/api-handler.js");
 const { filterAttr } = require("../utils/utils.js");
 const BeachAPI = new APIHandler();
@@ -22,14 +22,23 @@ router.get("/listado", (req, res, next) => {
 //Get beach details
 router.get("/detalles/:id", (req, res, next) => {
   const { id } = req.params;
-  BeachAPI.getFullList()
-    .then((allbeaches) => {
-      const oneBeach = allbeaches.data.features.filter(
+
+  const beachPromise = BeachAPI.getFullList()
+  const reviewPromise = Review.find({ beach: id })
+
+  Promise.all([beachPromise, reviewPromise])
+    .then(values => {
+      console.log(values)
+      const foundBeaches = values[0]
+      const foundReviews = values[1]
+
+      const oneBeach = foundBeaches.data.features.filter(
         (elm) => elm.attributes.Identifica == id
       );
-      res.render("beaches/beach-details", { beach: oneBeach[0] });
+
+      res.render("beaches/beach-details", { beach: oneBeach[0] , foundReviews});
     })
-    .catch((err) => console.log(err));
+
 });
 
 // Beach map
@@ -41,10 +50,11 @@ router.get("/detalles/:id", (req, res, next) =>
 router.get("/detalles/:id", (req, res, next) => res.render("/detalles/:id"));
 
 router.post("/detalles/:id", (req, res, next) => {
-  const { author, beach, content, date, rating } = req.params;
+  const { id } = req.params
+  const { content } = req.body;
 
-  Review.create({ author, beach, content, date, rating })
-    .then(() => res.redirect("/detalles/:id"))
+  Review.create({ author: req.session.currentUser._id, beach: id, content, rating: 5 }, { new: true })
+    .then(() => res.redirect(`/playa/detalles/${id}`))
     .catch((err) => console.log(err));
 });
 
