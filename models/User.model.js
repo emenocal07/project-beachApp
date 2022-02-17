@@ -23,12 +23,7 @@ const userSchema = new Schema(
       enum: ["USER", "ADMIN"],
       default: "USER",
     },
-    favBeaches: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Beach",
-      },
-    ],
+    favBeaches: [String], // this is an id
     profile: {
       name: {
         type: String,

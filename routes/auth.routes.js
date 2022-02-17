@@ -47,7 +47,7 @@ router.post("/iniciar-sesion", (req, res, next) => {
     } else {
       req.session.currentUser = user;
       console.log("session", req.session, user);
-      res.redirect("/perfil/:id");
+      res.redirect(`/perfil/${req.session, user.id}`);
     }
   });
 });
