@@ -48,19 +48,44 @@ router.post("/detalles/:id", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-// Search-form
+// Search-form by name
 
+router.post("/buscar/resultados/nombre", (req, res, next) => {
+  const { search } = req.body;
+
+  BeachAPI.getByNameLike(search.toLocaleLowerCase()).then((allbeaches) => {
+    const results = allbeaches.data.features;
+    res.render("search/search-result", { results });
+  });
+});
+
+// General results
 router.post("/buscar/resultados", (req, res, next) => {
   const { search } = req.body;
 
   BeachAPI.getFullList().then((allbeaches) => {
-    const results = allbeaches.data.features.filter((e) =>
-      filterAttr(e, search)
+    const results = allbeaches.data.features.filter((elm) =>
+      filterAttr(elm, search)
     );
 
     res.render("search/search-result", { results });
   });
 });
 
+
+
+
+// router.post("/buscar/resultados/nombre", (req, res, next) => {
+//   const { search } = req.body;
+
+//   const search1Promise = BeachAPI.getByNameLike(search.toLocaleLowerCase());
+
+//   const search2Promise = BeachAPI.getByProvinceLike(search.toLocaleLowerCase());
+
+//   Promise.all([search1Promise, search2Promise]).then((values) => {
+//     const results = values.data.features;
+//     res.render("search/search-result", { results: results });
+//   });
+// });
 
 module.exports = router;

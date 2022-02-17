@@ -3,19 +3,27 @@
     <img src="./images/turtle.png" class="image-turtle" />
 
     <center>
-      <form action="/playa/buscar/resultados" method="POST">
+      <form action="/playa/buscar/resultados/nombre" method="POST">
         <label for="search"></label>
         <input
-          id="search"
           type="text"
           name="search"
           value=""
-          placeholder="Busca lo que quieras"
+          placeholder="Nombre de la playa"
         />
-
-        <br />
-        <input type="submit" value="Go" />
+        <input type="submit" value="Ir" class="button-go" />
       </form>
+      <form action="/playa/buscar/resultados" method="POST">
+        <label for="search"></label>
+        <input
+          type="text"
+          name="search"
+          value=""
+          placeholder="Comunidad o provincia"
+        />
+        <input type="submit" value="Ir" class="button-go" />
+      </form>
+
     </center>
 
   </div>

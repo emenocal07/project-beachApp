@@ -9,23 +9,24 @@ nav {
 }
 
 
-.byebye {
-  font-weight: bold;
-  font-size: 2em;
-}
-
 
 
 .bye-gif {
   width: 20%;
   height: 20%;
-  margin-top: 10%;
+  margin-top: 2%;
+}
+
+.samil {
+  width: 600px;
+  border-radius: 40px;
+  margin-top: 20px;
 }
 
 .image-turtle {
   width: 25%;
   height: 25%;
-  opacity: 50%;
+  opacity: 60%;
 }
 
 #myMap {
@@ -53,10 +54,51 @@ nav {
 
 
 
+
+
+.beach-info {
+  background-color: rgba(255, 255, 255, 0.418);
+}
+.beach-info2 {
+  background-color: rgba(255, 255, 255, 0.418);
+}
+
+
+.palmtree {
+  height: 9%;
+  width: 5.2%;
+}
+
+.card-results a{
+   text-decoration: none;
+  color:black;
+}
+
+.beach-list-col{
+  margin-left: 10%;
+}
+
+.fotoplaya {
+    width: 45%;
+    margin-left: 120%;
+    margin-top: -460;
+}
+
+
+
+input {
+  width: 250px;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px rgb(121, 121, 121);
+  padding-bottom: 10px;
+}
+
+
 /*COMPONENTS*/
 
 .next-button {
-  margin-left: 2.5%;
+  margin-left: 4%;
   margin-top: 2%;
   text-decoration: none;
   color: black;
@@ -71,26 +113,22 @@ nav {
   background-color: transparent;
 }
 
-
-footer {
-  padding-top: 2%;
-  background-color: rgba(255, 255, 255, 0.767);
+.button-go {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+  border: none;
+  color: rgb(100, 100, 100);
+  text-align: center;
+  font-size: 18px;
+  width: 60px;
+  transition: all 0.5s;
+  margin: 5px;
 }
 
-.beach-info {
-  background-color: rgba(255, 255, 255, 0.418);
-}
-.beach-info2 {
-  background-color: rgba(255, 255, 255, 0.418);
-}
 
 
-.palmtree {
-  height: 10%;
-  width: 6%;
-}
 
-.card-results a{
-   text-decoration: none;
-  color:black;
+.button-go:hover {
+  background: rgba(255, 130, 130, 0.521);
 }

@@ -1,17 +1,36 @@
 <div class="container">
   <h3><img src="../images/palmtree.png" class="palmtree" />
     Listado de playas</h3>
-  <hr />
 
-  <ul class="beach-list">
-    {{#each beach}}
-      <li><a
-          href="/playa/detalles/{{attributes.Identifica}}"
-        >{{attributes.Nombre}}</a></li>
-    {{/each}}
-  </ul>
+  <div class="row">
 
-  <a href="/playa/listado?pagina={{previousPage}}" class="next-button">Atrás</a>
-  <a href="/playa/listado?pagina={{nextPage}}" class="next-button">Siguiente</a>
+    <div class="col-md-6 beach-list-col">
 
+      <ul class="beach-list">
+        {{! <img src="../images/illustration.jpeg" class="fotoplaya" /> }}
+        <br />
+        {{#each beach}}
+          <li><a
+              href="/playa/detalles/{{attributes.Identifica}}"
+            >{{attributes.Nombre}}</a></li>
+        {{/each}}
+      </ul>
+
+      <a
+        href="/playa/listado?pagina={{previousPage}}"
+        class="next-button"
+      >Atrás</a>
+      <a
+        href="/playa/listado?pagina={{nextPage}}"
+        class="next-button"
+      >Siguiente</a>
+    </div>
+    <div class="col-md-6">
+      <img src="../images/illustration.jpeg" class="fotoplaya" />
+    </div>
+    {{! <div class="col-md-6">
+        <img src="../images/illustration.jpeg" class="fotoplaya" />
+      </div> }}
+
+  </div>
 </div>

@@ -1,6 +1,5 @@
 <div class="container">
 
-  <h4>Resultados</h4>
   <br />
   <div class="row">
     {{#if results.length}}
@@ -15,8 +14,12 @@
           </div>
         </div>
       {{/each}}
+
+      
     {{else}}
-      <p>No hay resultados :(</p>
+    <div class="row justify-content-center">
+      <center><h4>No hay resultados :(</h4><center>
+      </div>
     {{/if}}
 
   </div>
