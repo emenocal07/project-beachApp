@@ -51,10 +51,6 @@ router.post("/detalles/:id", (req, res, next) =>{
 
 
 
-
-
-
-
 // Search-form
 
 /*
@@ -81,7 +77,6 @@ router.post("/buscar/resultados", (req, res, next) => {
     message: 'It works!'
   });
 });
-
 
 
 module.exports = router;

@@ -4,10 +4,10 @@ const User = require("../models/User.model");
 const { isUser, isAdmin } = require("../utils/utils");
 
 // Get full users list
-router.get("/usuarios/listado", (req, res, next) => {
+router.get("/usuarios/listado", isLoggedIn, (req, res, next) => {
   User.find()
     .then((users) => res.render("user/list-of-users", { users }))
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
 });
 
 // Get user's profile
@@ -26,18 +26,6 @@ router.get("/perfil/:id", (req, res, next) => {
     })
     .catch((err) => console.log(err));
 });
-
-// Delete user if admin
-router.post("/perfil/delete/:id", isLoggedIn, (req, res, next) => {
-  const { id } = req.params;
-
-  User.findByIdAndDelete(id)
-
-    .then(() => res.redirect("/usuarios/listado"))
-    .catch((err) => console.log(err));
-});
-
-module.exports = router;
 
 // Edit user
 
@@ -67,3 +55,17 @@ router.post("/perfil/editar/:id", isLoggedIn, (req, res, next) => {
     .then(() => res.redirect("/usuarios/listado"))
     .catch((err) => console.log(err));
 });
+
+// Delete user if admin
+router.post("/perfil/delete/:id", isLoggedIn, (req, res, next) => {
+  const { id } = req.params;
+
+  User.findByIdAndDelete(id)
+
+    .then(() => res.redirect("/usuarios/listado"))
+    .catch((err) => console.log(err));
+});
+
+module.exports = router;
+
+

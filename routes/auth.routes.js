@@ -16,25 +16,23 @@ router.post("/registro", (req, res, next) => {
     .then((hashedPassword) => {
       return User.create({ ...req.body, password: hashedPassword });
     })
-    .then((createdUser) => res.redirect("/"))
+    .then(() => res.redirect("/iniciar-sesion"))
     .catch((error) => next(error));
 });
 
-// Login from (render)
-router.get("/iniciar-sesion", (req, res, next) =>
-  res.render("auth/login-form")
-);
+// Login form (render)
+router.get("/iniciar-sesion", (req, res, next) => res.render("auth/login-form"));
 
 // Login form (handle)
 router.post("/iniciar-sesion", (req, res, next) => {
-  const { email, userPwd } = req.body;
+  const { email, userPwd, } = req.body;
 
   if (email.length === 0 || userPwd.length === 0) {
     res.render("auth/login-form", { errorMessage: "Por favor, rellena todos los campos",});
     return;
   }
 
-  User.findOne({ email }).then((user) => {
+  User.findOne({ email, }).then((user) => {
     if (!user) {
       res.render("auth/login-form", {
         errorMessage: "Email no registrado en la Base de Datos",});
@@ -49,14 +47,13 @@ router.post("/iniciar-sesion", (req, res, next) => {
     } else {
       req.session.currentUser = user;
       console.log("session", req.session, user);
-      res.redirect("/");
+      res.redirect("/perfil/:id");
     }
   });
 });
 
 // Logout
 router.get("/cerrar-sesion", (req, res, next) => {
-  console.log("entrando");
   req.session.destroy(() => res.render("session-closed"));
 });
 
