@@ -1,46 +1,22 @@
 <div class="container search-container">
   <div class="row justify-content-center">
+    <img src="./images/turtle.png" class="image-turtle" />
 
     <center>
       <form action="/playa/buscar/resultados" method="POST">
-        <label for="name"></label>
+        <label for="search"></label>
         <input
-          id="name"
+          id="search"
           type="text"
-          name="name"
+          name="search"
           value=""
-          placeholder="Nombre"
-          size="31"
-          maxlength="255"
+          placeholder="Busca lo que quieras"
         />
 
-        <label for="provincia"></label>
-        <input
-          id="provincia"
-          type="text"
-          name="provincia"
-          value=""
-          placeholder="provincia"
-          size="31"
-          maxlength="255"
-        />
-
-        <!--
-        <label for="surf"></label>
-        <select>
-          <option value="yes">Surf</option>
-          <option value="yes">Sí</option>
-          <option value="no">No</option>
-
-        </select>
-        -->
-
         <br />
-        <br />
-        <input type="submit" value="Búsqueda" />
+        <input type="submit" value="Go" />
       </form>
     </center>
 
-    <img src="./images/turtle.png" class="image-turtle" />
   </div>
 </div>

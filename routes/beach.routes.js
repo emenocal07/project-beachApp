@@ -1,6 +1,7 @@
 const router = require("express").Router();
 //const Review = require('../models/Review.model')
 const APIHandler = require("../services/api-handler.js");
+const { filterAttr } = require("../utils/utils.js");
 const BeachAPI = new APIHandler();
 
 // Get full list
@@ -49,31 +50,29 @@ router.post("/detalles/:id", (req, res, next) => {
 
 // Search-form
 
-/*
-router.get("/buscar/resultados", (req, res, next) => {
-  const { Nombre, Provincia, Surf } = req.query;
-  console.log(req.query);
-  BeachAPI.getFullList().then((allbeaches) => {
-    const result = allbeaches.data.features.filter((elm) =>
-      elm.attributes.includes(req.query)
-    );
-    res.render("search/search-result", { beaches: result });
-  });
-});
-*/
-
 router.post("/buscar/resultados", (req, res, next) => {
-  const { name, provincia } = req.body;
+  const { search } = req.body;
 
   BeachAPI.getFullList().then((allbeaches) => {
-    const result = allbeaches.data.features.filter(
-      (elm) => elm.attributes.Nombre
+    const results = allbeaches.data.features.filter((e) =>
+      filterAttr(e, search)
     );
-    res.render("search/search-result", { result: name, provincia });
+
+    res.render("search/search-result", { results });
   });
 });
+
+
+// router.post("/buscar/resultados", (req, res, next) => {
+//   const { search } = req.body;
+
+//   BeachAPI.getFullList().then((allbeaches) => {
+//     const results = allbeaches.data.features.filter((e) =>
+//       filterAttr(e, search)
+//     );
+
+//     res.render("search/search-result", { results });
+//   });
+// });
 
 module.exports = router;
-
-// res.status(201).json({
-//   message: 'It works!'

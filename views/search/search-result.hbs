@@ -1,3 +1,23 @@
-Resultados
+<div class="container">
 
-<p>Nombre: {{attributes.Nombre}} </p>
+  <h4>Resultados</h4>
+  <br />
+  <div class="row">
+    {{#if results.length}}
+      {{#each results}}
+        <div class="card users-card" style="width: 18rem;">
+          <div class="card-body card-results">
+
+            <h6><a
+          href="/playa/detalles/{{attributes.Identifica}}">{{attributes.Nombre}}</h6></a>
+            <p>{{attributes.Provincia}}</p>
+
+          </div>
+        </div>
+      {{/each}}
+    {{else}}
+      <p>No hay resultados :(</p>
+    {{/if}}
+
+  </div>
+</div>
