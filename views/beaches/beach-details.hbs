@@ -44,27 +44,29 @@
 </div>
 
 <div class="container">
+  <div class="row reviews-form">
   <form action="/playa/detalles/{{beach.attributes.Identifica}}" method="POST">
     <div class="row">
-      <div class="col">
+      <div class="col-md-6">
         <label for="exampleFormControlTextarea1" class="form-label">Deja una
           reseña</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" type="text"></textarea>
       </div>
 
-      <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-outline-secondary block">Enviar</button>
+      <div class="col-sm-2">
+        <button type="submit" class="btn btn-outline-secondary send-review-button">Enviar</button>
       </div>
 
   </form>
 </div>
+</div>
 
-<hr>
 
-<div>
+  <div class="row reviews">
 
-  <h3>Reseñas</h3>
+  <h5>Opiniones</h5>
   {{#each foundReviews}}
+<<<<<<< HEAD
   <ul>
 
     <li>
@@ -76,8 +78,48 @@
   </ul>
 
 
+=======
+  
+  <div class="card card-review" style="width: 41rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{this.author.profile.name}}</h5>
+    <p> </p>
+    <p class="card-text">{{this.content}}</p>
+  </div>
+  </div>  
+>>>>>>> 0e64b5ce75506b3d92adfee6b06c6292af090695
   {{/each}}
+
+
+
+
+
+  </div>
 </div>
 <script src="/js/beaches-map.js"></script>
 <script
-  src="https://maps.googleapis.com/maps/api/js?key=---------&callback=initMap"></script>
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANMCO4Ono02wonilsk44cCOdGTmb7LwRw&callback=initMap"></script>
+
+  <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="/images/turtle.png" class="footer-turtle" />
+      </div>
+      <div class="col-sm-4">
+        <b>Creado por</b>
+        <br />
+        Ernesto Espinoza
+        <br />
+        Estefanía Lamas
+      </div>
+      <div class="col-sm-4">
+        <b>Contacto</b>
+        <br />
+        tortuga@gmail.com
+        <br>
+        Ironhack, Madrid
+      </div>
+    </div>
+  </div>
+</footer>

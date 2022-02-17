@@ -8,9 +8,6 @@ nav {
   margin-bottom:  30px;
 }
 
-
-
-
 .bye-gif {
   width: 20%;
   height: 20%;
@@ -21,12 +18,14 @@ nav {
   width: 600px;
   border-radius: 40px;
   margin-top: 20px;
+  margin-bottom: 75px;
 }
 
 .image-turtle {
   width: 25%;
   height: 25%;
   opacity: 60%;
+  margin-bottom: 40px;
 }
 
 #myMap {
@@ -52,8 +51,15 @@ nav {
   color:black;
 }
 
+.back-button {
+  text-decoration: none;
+  color:black;
+}
 
-
+.back-button:hover {
+  text-decoration: none;
+  color: gray;
+}
 
 
 .beach-info {
@@ -106,7 +112,7 @@ input {
 }
 
 .next-button:hover {
-  color: fuchsia;
+  color: gray;
 }
 
 .search-button {
@@ -127,8 +133,49 @@ input {
 }
 
 
-
-
 .button-go:hover {
   background: rgba(255, 130, 130, 0.521);
+}
+
+.btn-usuarios:hover {
+  background: turquoise
+}
+
+
+
+/*REVIEWS*/
+
+.reviews {
+  margin-top: 20px;
+}
+
+.reviews-form {
+  margin-top: 30px;
+}
+
+.card-review {
+  background-color: rgba(255, 255, 255, 0.473);
+}
+
+.send-review-button {
+  margin-top: 55px;
+}
+
+
+/*FOOTER*/
+
+footer {
+  padding: 60px;
+  font-size: 15px;
+  color: rgb(36, 36, 36);
+}
+
+.footer-turtle {
+  width: 70px;
+  opacity: 70%;
+}
+
+.footer-login {
+  margin-top: 150px;
+  margin-bottom: 20px;
 }

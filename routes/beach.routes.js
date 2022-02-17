@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Review = require('../models/Review.model')
+const Review = require("../models/Review.model");
 const APIHandler = require("../services/api-handler.js");
 const { filterAttr } = require("../utils/utils.js");
 const BeachAPI = new APIHandler();
@@ -23,22 +23,20 @@ router.get("/listado", (req, res, next) => {
 router.get("/detalles/:id", (req, res, next) => {
   const { id } = req.params;
 
-  const beachPromise = BeachAPI.getFullList()
-  const reviewPromise = Review.find({ beach: id })
+  const beachPromise = BeachAPI.getFullList();
+  const reviewPromise = Review.find({ beach: id }).populate("author");
 
-  Promise.all([beachPromise, reviewPromise])
-    .then(values => {
-      console.log(values)
-      const foundBeaches = values[0]
-      const foundReviews = values[1]
+  Promise.all([beachPromise, reviewPromise]).then((values) => {
+    console.log(values);
+    const foundBeaches = values[0];
+    const foundReviews = values[1];
 
-      const oneBeach = foundBeaches.data.features.filter(
-        (elm) => elm.attributes.Identifica == id
-      );
+    const oneBeach = foundBeaches.data.features.filter(
+      (elm) => elm.attributes.Identifica == id
+    );
 
-      res.render("beaches/beach-details", { beach: oneBeach[0] , foundReviews});
-    })
-
+    res.render("beaches/beach-details", { beach: oneBeach[0], foundReviews });
+  });
 });
 
 // Beach map
@@ -81,9 +79,6 @@ router.post("/buscar/resultados", (req, res, next) => {
     res.render("search/search-result", { results });
   });
 });
-
-
-
 
 // router.post("/buscar/resultados/nombre", (req, res, next) => {
 //   const { search } = req.body;
