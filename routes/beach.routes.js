@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { isLoggedIn } = require("../middleware/routeguard");
 const Review = require("../models/Review.model");
 const APIHandler = require("../services/api-handler.js");
 const { filterAttr } = require("../utils/utils.js");
@@ -29,7 +30,13 @@ router.get("/detalles/:id", (req, res, next) => {
   Promise.all([beachPromise, reviewPromise]).then((values) => {
     console.log(values);
     const foundBeaches = values[0];
-    const foundReviews = values[1];
+    const foundReviews = values[1]
+      .map(r => ({
+        author: r.author.profile.name,
+        content: r.content,
+        date: r.date.toLocaleString()
+      })) 
+      .reverse();
 
     const oneBeach = foundBeaches.data.features.filter(
       (elm) => elm.attributes.Identifica == id
@@ -47,12 +54,16 @@ router.get("/detalles/:id", (req, res, next) =>
 //Add reviews
 router.get("/detalles/:id", (req, res, next) => res.render("/detalles/:id"));
 
-router.post("/detalles/:id", (req, res, next) => {
-  const { id } = req.params
-  const { content, date } = req.body;
+router.post("/detalles/:id", isLoggedIn, (req, res, next) => {
+  const { id } = req.params;
+  const { content } = req.body;
 
-  Review.create({ author: req.session.currentUser._id, beach: id, content, date }, { new: true })
+  Review.create(
+    { author: req.session.currentUser._id, beach: id, content, date: new Date() },
+    { new: true }
+  )
     .then(() => res.redirect(`/playa/detalles/${id}`))
+
     .catch((err) => console.log(err));
 });
 
@@ -79,18 +90,5 @@ router.post("/buscar/resultados", (req, res, next) => {
     res.render("search/search-result", { results });
   });
 });
-
-// router.post("/buscar/resultados/nombre", (req, res, next) => {
-//   const { search } = req.body;
-
-//   const search1Promise = BeachAPI.getByNameLike(search.toLocaleLowerCase());
-
-//   const search2Promise = BeachAPI.getByProvinceLike(search.toLocaleLowerCase());
-
-//   Promise.all([search1Promise, search2Promise]).then((values) => {
-//     const results = values.data.features;
-//     res.render("search/search-result", { results: results });
-//   });
-// });
 
 module.exports = router;

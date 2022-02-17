@@ -48,13 +48,13 @@
   <form action="/playa/detalles/{{beach.attributes.Identifica}}" method="POST">
     <div class="row">
       <div class="col-md-6">
-        <label for="exampleFormControlTextarea1" class="form-label">Deja una
-          reseña</label>
+        <label for="exampleFormControlTextarea1" class="form-label"><h6>Deja una
+          reseña</h6></label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" type="text"></textarea>
       </div>
 
       <div class="col-sm-2">
-        <button type="submit" class="btn btn-outline-secondary send-review-button">Enviar</button>
+        <button type="submit" class="btn btn-outline-dark send-review-button" style="width: 8rem;">Enviar</button>
       </div>
 
   </form>
@@ -64,13 +64,16 @@
 
   <div class="row reviews">
 
-  <h5>Opiniones</h5>
+  <h6>Opiniones</h6>
+  <br>
   {{#each foundReviews}}
   
-  <div class="card card-review" style="width: 41rem;">
+  <div class="card card-review" style="width: 70rem;">
   <div class="card-body">
-    <h5 class="card-title">{{this.author.profile.name}}</h5>
-    
+    <span>
+      <h5 class="card-title card-review-title">{{this.author}}</h5> <span>{{this.date}}</span>
+    </span>
+
     <p> </p>
     <p class="card-text">{{this.content}}</p>
 
