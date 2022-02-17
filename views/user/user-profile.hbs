@@ -11,7 +11,7 @@
         <p>{{user.favBeaches}}</p>
         <p>Miembro desde: {{user.createdAt}}</p>
 
-        {{#if isUser}}
+        {{#if canEdit}}
 
         <div class="row">
           <div class="col-md-6">
@@ -28,26 +28,6 @@
           </div>
         </div>
         {{/if}}
-
-                {{#if isAdmin}}
-                
-                <div class="row">
-                  <div class="col-md-6">
-                
-                    <form action="/perfil/delete/{{user._id}}" method="POST">
-                      <button class="btn btn-outline-danger">Eliminar perfil</button>
-                    </form>
-                
-                  </div>
-                  <div class="col-md-6">
-                    <form action="/perfil/editar/{{user._id}}" method="GET">
-                      <button class="btn btn-outline-info">Editar perfil</a>
-                    </form>
-                  </div>
-                </div>
-                <a class="btn btn-usuarios" href="/usuarios/listado">Usuarios</a>
-                {{/if}}
-
 
         <a href="/" class="back-button"><b>Atrás</b></a>
 

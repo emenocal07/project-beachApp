@@ -14,19 +14,21 @@ router.get("/usuarios/listado", isLoggedIn, checkRole('ADMIN'), (req, res, next)
     
 });
 
+function canEdit(req, userId) {
+  const isOwner = isUser(userId, req.session.currentUser._id);
+  const isLoggedAdmin = isAdmin(req.session.currentUser);
+  return isOwner || isLoggedAdmin;
+}
+
 // Get user's profile
 router.get("/perfil/:id", (req, res, next) => {
   const { id } = req.params;
-  console.log(id);
   User.findById(id)
     .then((user) => {
-      console.log('USERRRRRRR', user)
-      console.log('HOLAAAA', req.session.currentUser);
       res.render("user/user-profile", {
         user,
         isLogged: isLogged(req.session.currentUser),
-        isAdmin: isAdmin(req.session.currentUser),
-        isUser: isUser(req.session.currentUser._id, id),
+        canEdit: canEdit(req, id)
       });
     })
     .catch((err) => console.log(err));
