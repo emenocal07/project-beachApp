@@ -27,9 +27,14 @@
             </form>
           </div>
         </div>
-        {{/if}}
 
-        <a href="/" class="back-button"><b>Atrás</b></a>
+        {{/if}}
+          {{#if isAdmin}}
+            <a href="/usuarios/listado" class="btn btn-outline-dark"><b>Listado de usuarios</b></a>
+        
+
+           {{/if}}
+            <a href="/" class="back-button"><b>Atrás</b></a>
 
       </div>
     </div>

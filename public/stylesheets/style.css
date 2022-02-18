@@ -54,6 +54,7 @@ nav {
 .back-button {
   text-decoration: none;
   color:black;
+  margin-left: 30px;
 }
 
 .back-button:hover {
