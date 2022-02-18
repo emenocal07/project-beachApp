@@ -31,6 +31,4 @@ const filterAttr = (attr, search) => {
   return false;
 };
 
-// En la ruta hay q llamar a esta función, y serán los valores id y req.session.currentUser._id para luego comparar en la ruta
-
 module.exports = { isUser, isLogged, isAdmin, capitalized, filterAttr };

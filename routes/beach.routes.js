@@ -27,7 +27,6 @@ router.get("/detalles/:id", (req, res, next) => {
   const reviewPromise = Review.find({ beach: id }).populate("author");
 
   Promise.all([beachPromise, reviewPromise]).then((values) => {
-    console.log(values);
     const foundBeaches = values[0];
     const foundReviews = values[1];
 
@@ -79,18 +78,5 @@ router.post("/buscar/resultados", (req, res, next) => {
     res.render("search/search-result", { results });
   });
 });
-
-// router.post("/buscar/resultados/nombre", (req, res, next) => {
-//   const { search } = req.body;
-
-//   const search1Promise = BeachAPI.getByNameLike(search.toLocaleLowerCase());
-
-//   const search2Promise = BeachAPI.getByProvinceLike(search.toLocaleLowerCase());
-
-//   Promise.all([search1Promise, search2Promise]).then((values) => {
-//     const results = values.data.features;
-//     res.render("search/search-result", { results: results });
-//   });
-// });
 
 module.exports = router;

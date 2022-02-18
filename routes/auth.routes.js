@@ -1,20 +1,20 @@
 const router = require("express").Router();
 const bcryptjs = require("bcryptjs");
 const User = require("./../models/User.model");
+const fileUploader = require('../config/cloudinary.config')
 const saltRounds = 10;
 
 // Signup form (render)
 router.get("/registro", (req, res, next) => res.render("auth/signup-form"));
 
 // Signup form (handle)
-router.post("/registro", (req, res, next) => {
+router.post("/registro", fileUploader.single('image'), (req, res, next) => {
   const { username, email, userPwd, image } = req.body;
-  console.log(req.body);
   bcryptjs
     .genSalt(saltRounds)
     .then((salt) => bcryptjs.hash(userPwd, salt))
     .then((hashedPassword) => {
-      return User.create({ ...req.body, password: hashedPassword });
+      return User.create({ ...req.body, profile: { image: req.file.path }, password: hashedPassword });
     })
     .then(() => res.redirect("/iniciar-sesion"))
     .catch((error) => next(error));
@@ -53,7 +53,6 @@ router.post("/iniciar-sesion", (req, res, next) => {
       req.session.currentUser = user;
       req.app.locals.currentLoggedUser = req.session.currentUser
       req.app.locals.isLoggedIn = true
-      console.log("session", req.session, user);
       res.redirect(`/perfil/${(req.session, user.id)}`);
     }
   });

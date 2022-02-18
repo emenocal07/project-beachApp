@@ -45,50 +45,40 @@
 
 <div class="container">
   <div class="row reviews-form">
-  <form action="/playa/detalles/{{beach.attributes.Identifica}}" method="POST">
-    <div class="row">
-      <div class="col-md-6">
-        <label for="exampleFormControlTextarea1" class="form-label">Deja una
-          reseña</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" type="text"></textarea>
-      </div>
-
-      <div class="col-sm-2">
-        <button type="submit" class="btn btn-outline-secondary send-review-button">Enviar</button>
-      </div>
-
-  </form>
+    <form action="/playa/detalles/{{beach.attributes.Identifica}}" method="POST">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="exampleFormControlTextarea1" class="form-label">Deja una
+            reseña</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"
+            type="text"></textarea>
+        </div>
+        <div class="col-sm-2">
+          <button type="submit" class="btn btn-outline-secondary send-review-button">Enviar</button>
+        </div>
+    </form>
+  </div>
 </div>
-</div>
 
 
-  <div class="row reviews">
+<div class="row reviews">
 
   <h5>Opiniones</h5>
   {{#each foundReviews}}
-  
+
   <div class="card card-review" style="width: 41rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{this.author.profile.name}}</h5>
-    
-    <p> </p>
-    <p class="card-text">{{this.content}}</p>
+    <div class="card-body">
+      <h5 class="card-title">{{this.author.profile.name}}</h5>
 
+      <p> </p>
+      <p class="card-text">{{this.content}}</p>
+
+    </div>
   </div>
-  </div>  
   {{/each}}
-
-
-
-
-
-  </div>
 </div>
-<script src="/js/beaches-map.js"></script>
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=---------------&callback=initMap"></script>
 
-  <footer>
+<footer>
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
@@ -111,3 +101,6 @@
     </div>
   </div>
 </footer>
+
+<script src="/js/beaches-map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=---------------&callback=initMap"></script>

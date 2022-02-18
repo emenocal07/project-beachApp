@@ -23,7 +23,7 @@ const userSchema = new Schema(
       enum: ["USER", "ADMIN"],
       default: "USER",
     },
-    favBeaches: [String], // this is an id
+    favBeaches: [String],
     profile: {
       name: {
         type: String,

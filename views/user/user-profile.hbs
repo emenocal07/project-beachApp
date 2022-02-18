@@ -29,24 +29,24 @@
         </div>
         {{/if}}
 
-                {{#if isAdmin}}
-                
-                <div class="row">
-                  <div class="col-md-6">
-                
-                    <form action="/perfil/delete/{{user._id}}" method="POST">
-                      <button class="btn btn-outline-danger">Eliminar perfil</button>
-                    </form>
-                
-                  </div>
-                  <div class="col-md-6">
-                    <form action="/perfil/editar/{{user._id}}" method="GET">
-                      <button class="btn btn-outline-info">Editar perfil</a>
-                    </form>
-                  </div>
-                </div>
-                <a class="btn btn-usuarios" href="/usuarios/listado">Usuarios</a>
-                {{/if}}
+        {{#if isAdmin}}
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <form action="/perfil/delete/{{user._id}}" method="POST">
+              <button class="btn btn-outline-danger">Eliminar perfil</button>
+            </form>
+
+          </div>
+          <div class="col-md-6">
+            <form action="/perfil/editar/{{user._id}}" method="GET">
+              <button class="btn btn-outline-info">Editar perfil</a>
+            </form>
+          </div>
+        </div>
+        <a class="btn btn-usuarios" href="/usuarios/listado">Usuarios</a>
+        {{/if}}
 
 
         <a href="/" class="back-button"><b>Atrás</b></a>
@@ -56,26 +56,26 @@
   </div>
 </div>
 
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <img src="/images/turtle.png" class="footer-turtle" />
-        </div>
-        <div class="col-sm-4">
-          <b>Creado por</b>
-          <br />
-          Ernesto Espinoza
-          <br />
-          Estefanía Lamas
-        </div>
-        <div class="col-sm-4">
-          <b>Contacto</b>
-          <br />
-          tortuga@gmail.com
-          <br>
-         Ironhack, Madrid
-        </div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="/images/turtle.png" class="footer-turtle" />
+      </div>
+      <div class="col-sm-4">
+        <b>Creado por</b>
+        <br />
+        Ernesto Espinoza
+        <br />
+        Estefanía Lamas
+      </div>
+      <div class="col-sm-4">
+        <b>Contacto</b>
+        <br />
+        tortuga@gmail.com
+        <br>
+        Ironhack, Madrid
       </div>
     </div>
-  </footer>
+  </div>
+</footer>

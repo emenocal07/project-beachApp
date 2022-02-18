@@ -3,6 +3,7 @@ const { isLoggedIn, checkRole } = require("../middleware/routeguard");
 const User = require("../models/User.model");
 const { isUser, isAdmin, isLogged } = require("../utils/utils");
 
+
 // Get full users list
 router.get("/usuarios/listado", isLoggedIn, checkRole('ADMIN'), (req, res, next) => {
   User.find()
@@ -16,12 +17,9 @@ router.get("/usuarios/listado", isLoggedIn, checkRole('ADMIN'), (req, res, next)
 
 // Get user's profile
 router.get("/perfil/:id", (req, res, next) => {
-  const { id } = req.params;
-  console.log(id);
+  const { id } = req.params
   User.findById(id)
     .then((user) => {
-      console.log('USERRRRRRR', user)
-      console.log('HOLAAAA', req.session.currentUser);
       res.render("user/user-profile", {
         user,
         isLogged: isLogged(req.session.currentUser),

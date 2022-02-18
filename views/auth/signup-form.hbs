@@ -7,59 +7,40 @@
       <h1>Registro</h1>
       <hr />
 
-      <form action="/registro" method="POST">
+      <form action="/registro" method="POST" enctype="multipart/form-data">
 
         <div class="mb-3 row">
           <div class="col">
             <label for="nameInput" class="form-label">Nombre</label>
-            <input
-              type="text"
-              class="form-control"
-              id="nameInput"
-              name="profile.name"
-            />
+            <input type="text" class="form-control" id="nameInput" name="profile.name" />
           </div>
           <div class="col">
             <label for="lastNameInput" class="form-label">Apellido</label>
-            <input
-              type="text"
-              class="form-control"
-              id="lastNameInput"
-              name="profile.lastName"
-            />
+            <input type="text" class="form-control" id="lastNameInput" name="profile.lastName" />
           </div>
         </div>
         <div class="mb-3 row">
           <div class="col">
             <label for="emailInput" class="form-label">Dirección de email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="emailInput"
-              name="email"
-            />
+            <input type="email" class="form-control" id="emailInput" name="email" />
             <div class="form-text">Requerido.</div>
           </div>
           <div class="col">
             <label for="pwdInput" class="form-label">Contraseña</label>
-            <input
-              type="password"
-              class="form-control"
-              id="pwdInput"
-              name="userPwd"
-            />
+            <input type="password" class="form-control" id="pwdInput" name="userPwd" />
             <div class="form-text">Requerido.</div>
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="usernameInput" class="form-label">Nombre de usuario</label>
-          <input
-            type="text"
-            class="form-control"
-            id="usernameInput"
-            name="username"
-          />
+        <div class="mb-3 row">
+          <div class="col">
+            <label for="usernameInput" class="form-label">Nombre de usuario</label>
+            <input type="text" class="form-control" id="usernameInput" name="username" />
+          </div>
+          <div class="col">
+            <label for="imageInput" class="form-label">Imagen de perfil</label>
+            <input type="file" class="form-control" id="imageInput" name="image" />
+          </div>
         </div>
 
         <div class="d-grid gap-2">
@@ -68,9 +49,9 @@
         </div>
 
         {{#if errorMessage}}
-          <div id="errorMessage">
-            <p>{{errorMessage}}</p>
-          </div>
+        <div id="errorMessage">
+          <p>{{errorMessage}}</p>
+        </div>
         {{/if}}
 
       </form>

@@ -3,23 +3,24 @@
   <br />
   <div class="row">
     {{#if results.length}}
-      {{#each results}}
-        <div class="card users-card" style="width: 18rem;">
-          <div class="card-body card-results">
+    {{#each results}}
+    <div class="card users-card" style="width: 18rem;">
+      <div class="card-body card-results">
 
-            <h6><a
-          href="/playa/detalles/{{attributes.Identifica}}">{{attributes.Nombre}}</h6></a>
-            <p>{{attributes.Provincia}}</p>
+        <h6><a href="/playa/detalles/{{attributes.Identifica}}">{{attributes.Nombre}}</h6></a>
+        <p>{{attributes.Provincia}}</p>
 
-          </div>
-        </div>
-      {{/each}}
+      </div>
+    </div>
+    {{/each}}
 
-      
+
     {{else}}
     <div class="row justify-content-center">
-      <center><h4>No hay resultados :(</h4><center>
-      </div>
+      <center>
+        <h4>No hay resultados :(</h4>
+        <center>
+    </div>
     {{/if}}
 
   </div>
