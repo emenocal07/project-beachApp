@@ -23,8 +23,9 @@ router.get("/perfil/:id", (req, res, next) => {
     .then((user) => {
       res.render("user/user-profile", {
         user,
-        isLogged: isLogged(req.session.currentUser),
-        canEdit: canEdit(req, id)
+        // isLogged: isLogged(req.session.currentUser),
+        canEdit: canEdit(req, id),
+        
       });
     })
     .catch((err) => console.log(err));
@@ -55,7 +56,7 @@ router.post("/perfil/editar/:id", isLoggedIn, (req, res, next) => {
   const { username, email, name, lastName } = req.body;
 
   User.findByIdAndUpdate(id, { username, email, profile: { name, lastName } })
-    .then(() => res.redirect("/usuarios/listado"))
+    .then(() => res.redirect("/"))
     .catch((err) => console.log(err));
 });
 
@@ -65,7 +66,7 @@ router.post("/perfil/delete/:id", isLoggedIn, (req, res, next) => {
 
   User.findByIdAndDelete(id)
 
-    .then(() => res.redirect("/usuarios/listado"))
+    .then(() => res.redirect("/"))
     .catch((err) => console.log(err));
 });
 
