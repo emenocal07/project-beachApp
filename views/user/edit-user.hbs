@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
 
-    <h2>Editar {{user.username}}</h2>
+    <h4>Editar perfil</h4>
+    <br />
+    <br />
     <br />
 
     <form action="/perfil/editar/{{user._id}}" method="POST">
@@ -19,6 +21,7 @@
       <label for="name">Nombre</label>
       <input
         id="name"
+        class="nameinput"
         type="text"
         name="name"
         value="{{user.profile.name}}"

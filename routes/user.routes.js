@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { isLoggedIn, checkRole } = require("../middleware/routeguard");
 const User = require("../models/User.model");
-const { isUser, isAdmin, isLogged } = require("../utils/utils");
+const { isUser, isAdmin, isLogged, canEdit } = require("../utils/utils");
 
 // Get full users list
 router.get("/usuarios/listado", isLoggedIn, checkRole('ADMIN'), (req, res, next) => {
@@ -14,11 +14,6 @@ router.get("/usuarios/listado", isLoggedIn, checkRole('ADMIN'), (req, res, next)
     
 });
 
-function canEdit(req, userId) {
-  const isOwner = isUser(userId, req.session.currentUser._id);
-  const isLoggedAdmin = isAdmin(req.session.currentUser);
-  return isOwner || isLoggedAdmin;
-}
 
 // Get user's profile
 router.get("/perfil/:id", (req, res, next) => {

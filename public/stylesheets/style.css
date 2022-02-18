@@ -64,9 +64,13 @@ nav {
 
 .beach-info {
   background-color: rgba(255, 255, 255, 0.418);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 .beach-info2 {
   background-color: rgba(255, 255, 255, 0.418);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 
@@ -92,12 +96,27 @@ nav {
 
 
 
-input {
+#search {
   width: 250px;
   background-color: transparent;
   border: none;
   border-bottom: solid 2px rgb(121, 121, 121);
   padding-bottom: 10px;
+}
+
+#username {
+  margin-left: 10px,
+}
+.nameinput {
+  margin-left: 16px;
+}
+
+#email {
+  margin-left: 34px;
+}
+
+#lastName {
+  margin-left: 15px;
 }
 
 
@@ -147,18 +166,30 @@ input {
 
 .reviews {
   margin-top: 20px;
+  font-size: 15px;
 }
 
 .reviews-form {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .card-review {
   background-color: rgba(255, 255, 255, 0.473);
+  font-size: 15px;
+  margin-top: 10px;
+  border: none;
 }
 
 .send-review-button {
   margin-top: 55px;
+}
+
+.card-review-title {
+font-size: 17px;
+}
+
+.date {
+  color: gray
 }
 
 

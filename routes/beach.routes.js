@@ -20,7 +20,7 @@ router.get("/listado", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-//Get beach details
+//Get beach details & reviews
 router.get("/detalles/:id", (req, res, next) => {
   const { id } = req.params;
 

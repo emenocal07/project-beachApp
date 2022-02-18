@@ -31,6 +31,13 @@ const filterAttr = (attr, search) => {
   return false;
 };
 
+
+function canEdit(req, userId) {
+  const isOwner = isUser(userId, req.session.currentUser._id);
+  const isLoggedAdmin = isAdmin(req.session.currentUser);
+  return isOwner || isLoggedAdmin;
+}
+
 // En la ruta hay q llamar a esta función, y serán los valores id y req.session.currentUser._id para luego comparar en la ruta
 
-module.exports = { isUser, isLogged, isAdmin, capitalized, filterAttr };
+module.exports = { isUser, isLogged, isAdmin, capitalized, filterAttr, canEdit };

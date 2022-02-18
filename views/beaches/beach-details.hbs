@@ -48,8 +48,7 @@
   <form action="/playa/detalles/{{beach.attributes.Identifica}}" method="POST">
     <div class="row">
       <div class="col-md-6">
-        <label for="exampleFormControlTextarea1" class="form-label"><h6>Deja una
-          reseña</h6></label>
+        <label for="exampleFormControlTextarea1" class="form-label"><h6>Deja tu opinión</h6></label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" type="text"></textarea>
       </div>
 
@@ -70,8 +69,7 @@
   
   <div class="card card-review" style="width: 70rem;">
   <div class="card-body">
-    <span>
-      <h5 class="card-title card-review-title">{{this.author}}</h5> <span>{{this.date}}</span>
+    <p class="card-title card-review-title"> <b>{{this.author}}</b> <p class="date"> {{this.date}} </p>
     </span>
 
     <p> </p>
@@ -80,13 +78,9 @@
   </div>
   </div>  
   {{/each}}
-
-
-
-
-
-  </div>
 </div>
+</div>
+
 <script src="/js/beaches-map.js"></script>
 <script
   src="https://maps.googleapis.com/maps/api/js?key=---------------&callback=initMap"></script>
