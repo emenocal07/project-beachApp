@@ -38,5 +38,10 @@ function canEdit(req, userId) {
   return isOwner || isLoggedAdmin;
 }
 
+const formatError = error => {
+  let errorMessage = '';
+  Object.entries(error.errors).forEach(eachError => errorMessage += `${eachError[1].message}<br>`)
+  return errorMessage
+}
 
-module.exports = { isUser, isLogged, isAdmin, capitalized, filterAttr, canEdit };
+module.exports = { isUser, isLogged, isAdmin, capitalized, filterAttr, canEdit, formatError };

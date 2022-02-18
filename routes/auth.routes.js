@@ -20,6 +20,7 @@ router.post("/registro", fileUploader.single('image'), (req, res, next) => {
     .catch((error) => next(error));
 });
 
+
 // Login form (render)
 router.get("/iniciar-sesion", (req, res, next) =>
   res.render("auth/login-form")
