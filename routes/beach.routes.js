@@ -88,6 +88,5 @@ router.post("/buscar/resultados", (req, res, next) => {
     res.render("search/search-result", { results });
   });
 });
-console.log('AQUIIIIIIIIIIIIIIIIIII', process.env)
 
 module.exports = router;
