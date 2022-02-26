@@ -34,3 +34,4 @@ function printMarkers() {
         title: beachTitle
     })
 }
+

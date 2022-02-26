@@ -9,11 +9,8 @@
       <p><strong>Provincia: </strong>{{beach.attributes.Provincia}}</p>
       <p><strong>Dirección: </strong>{{beach.attributes.Dirección}}</p>
       <p><strong>Descripción: </strong>{{beach.attributes.Descripci}}</p>
-      <p><strong>Longitud / Anchura: </strong>{{beach.attributes.Longitud}}
-        /
-        {{beach.attributes.Anchura}}</p>
-      <p><strong>Grado de ocupación:
-        </strong>{{beach.attributes.Grado_ocup}}</p>
+      <p><strong>Longitud / Anchura: </strong>{{beach.attributes.Longitud}} / {{beach.attributes.Anchura}}</p>
+      <p><strong>Grado de ocupación: </strong>{{beach.attributes.Grado_ocup}}</p>
       <p><strong>Aparcamiento: </strong>{{beach.attributes.Aparcamien}}</p>
       <p><strong>Aseos: </strong>{{beach.attributes.Aseos}}</p>
 
@@ -45,19 +42,22 @@
 
 <div class="container">
   <div class="row reviews-form">
-  <form action="/playa/detalles/{{beach.attributes.Identifica}}" method="POST">
-    <div class="row">
-      <div class="col-md-6">
-        <label for="exampleFormControlTextarea1" class="form-label"><h6>Deja tu opinión</h6></label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content" type="text"></textarea>
-      </div>
+    <form action="/playa/detalles/{{beach.attributes.Identifica}}" method="POST">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="exampleFormControlTextarea1" class="form-label">
+            <h6>Deja tu opinión</h6>
+          </label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"
+            type="text"></textarea>
+        </div>
 
-      <div class="col-sm-2">
-        <button type="submit" class="btn btn-outline-dark send-review-button" style="width: 8rem;">Enviar</button>
-      </div>
+        <div class="col-sm-2">
+          <button type="submit" class="btn btn-outline-dark send-review-button" style="width: 8rem;">Enviar</button>
+        </div>
 
-  </form>
-</div>
+    </form>
+  </div>
 </div>
 
 
@@ -66,15 +66,14 @@
   <h6>Opiniones</h6>
   <br>
   {{#each foundReviews}}
-  
+
   <div class="card card-review" style="width: 70rem;">
-  <div class="card-body">
-    <p class="card-title card-review-title"> <b>{{this.author}}</b> <p class="date"> {{this.date}} </p>
-    </span>
+    <div class="card-body">
+      <p class="card-title card-review-title"> <b>{{this.author}}</b>
 
-    <p> </p>
-    <p class="card-text">{{this.content}}</p>
+      <p class="card-text">{{this.content}}</p>
 
+      <p class="date"> {{this.date}} </p>
 
     </div>
   </div>
@@ -107,4 +106,4 @@
 </footer>
 
 <script src="/js/beaches-map.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key={{process.env.GOOGLEMAPSKEY}}&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{process.env.GOOGLE_KEY}}&callback=initMap"></script>

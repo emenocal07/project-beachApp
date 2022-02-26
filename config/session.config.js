@@ -14,12 +14,11 @@ module.exports = (app) => {
         sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
         secure: process.env.NODE_ENV === "production",
         httpOnly: true,
-        maxAge: 600000000,
+        maxAge: 600000,
       },
       store: MongoStore.create({
         mongoUrl:
-          process.env.MONGODB_URI ||
-          "mongodb+srv://emenocal07:dg5WjQkxvN4uJHiH@cluster0.wmhyh.mongodb.net/beachapp",
+          process.env.MONGODB_URI
       }),
     })
   );
