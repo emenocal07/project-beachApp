@@ -34,7 +34,7 @@ router.get("/detalles/:id", (req, res, next) => {
         author: r.author.profile.name,
         content: r.content,
         date: r.date.toLocaleString()
-      })) 
+      }))
       .reverse();
 
     const oneBeach = foundBeaches.data.features.filter(
@@ -62,12 +62,10 @@ router.post("/detalles/:id", isLoggedIn, (req, res, next) => {
     { new: true }
   )
     .then(() => res.redirect(`/playa/detalles/${id}`))
-
     .catch((err) => console.log(err));
 });
 
 // Search-form by name
-
 router.post("/buscar/resultados/nombre", (req, res, next) => {
   const { search } = req.body;
 
@@ -76,6 +74,7 @@ router.post("/buscar/resultados/nombre", (req, res, next) => {
     res.render("search/search-result", { results });
   });
 });
+
 
 // General results
 router.post("/buscar/resultados", (req, res, next) => {
@@ -89,5 +88,6 @@ router.post("/buscar/resultados", (req, res, next) => {
     res.render("search/search-result", { results });
   });
 });
+console.log('AQUIIIIIIIIIIIIIIIIIII', process.env)
 
 module.exports = router;
