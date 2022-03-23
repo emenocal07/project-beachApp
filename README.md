@@ -6,7 +6,10 @@ This project's aim is to provide a searcher of all beaches all over the Spanish 
 ![tortuga-screenshot](https://user-images.githubusercontent.com/95500908/159769583-a99d632d-c720-4b8f-8cb3-4a054833b52c.jpg)
 ![tortuga-screenshot2](https://user-images.githubusercontent.com/95500908/159769596-d2e629f0-e882-41f9-81ce-c1a9ca7adaa7.jpg)
 
-### Endpoints
+### technologies
+Js, Css, Handlebars, Express, MongoDB, Postman
+
+#### Endpoints
 | HTTP Method | URI path            | Description      |      Protected |
 | :---         |   :---:            |          ---:    |           ---: |
 | GET          | /                  | Render index page and search   |          |
