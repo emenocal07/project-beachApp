@@ -1,6 +1,6 @@
 # 🏖️ Beach locator
 
-This project's aim is to provide a searcher of all beaches all over the Spanish country filtering by name or location and giving information of each beach.
+This project's aim is to provide a searcher of all beaches all over the Spanish country filtering by name or location and giving information of each beach. Take a look at it: https://tortuga-beach-locator.herokuapp.com/
 
 ## Screenshots
 ![tortuga-screenshot](https://user-images.githubusercontent.com/95500908/159769583-a99d632d-c720-4b8f-8cb3-4a054833b52c.jpg)
